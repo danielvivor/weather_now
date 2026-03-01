@@ -17,3 +17,11 @@ from PyQt5.QtWidgets import (
 from PyQt5.QtCore import (
     Qt,
 )  # used for alignment and other core functionalities in PyQt5
+
+
+# Create the main application class
+class WeatherApp(QWidget):
+    def __init__(self):
+        super().__init__()
+
+        
