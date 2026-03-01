@@ -24,4 +24,6 @@ class WeatherApp(QWidget):
     def __init__(self):
         super().__init__()
 
-        
+# Start the application
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
