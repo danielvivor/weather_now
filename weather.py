@@ -101,6 +101,12 @@ class WeatherApp(QWidget):
         self.get_weather_button.setText("Loading...")
         self.get_weather_button.setEnabled(False)
 
+        url = (
+            f"https://api.openweathermap.org/data/2.5/weather?"
+            f"q={city}&appid={api_key}&units=metric"
+        )
+
+
 
 # Start the application
 if __name__ == "__main__":
