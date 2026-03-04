@@ -53,6 +53,13 @@ class WeatherApp(QWidget):
 
         self.setLayout(vbox)
 
+        self.city_label.setAlignment(Qt.AlignCenter)
+        self.city_input.setAlignment(Qt.AlignCenter)
+        self.error_label.setAlignment(Qt.AlignCenter)
+        self.temperature_label.setAlignment(Qt.AlignCenter)
+        self.emoji_label.setAlignment(Qt.AlignCenter)
+        self.description_label.setAlignment(Qt.AlignCenter)
+
 
 # Start the application
 if __name__ == "__main__":
