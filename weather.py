@@ -39,6 +39,8 @@ class WeatherApp(QWidget):
     def initUI(self):
         self.setWindowTitle("Weather Now")
 
+        vbox = QVBoxLayout()
+
 
 # Start the application
 if __name__ == "__main__":
