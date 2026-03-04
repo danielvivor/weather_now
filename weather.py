@@ -33,6 +33,8 @@ class WeatherApp(QWidget):
         self.emoji_label = QLabel(self)
         self.description_label = QLabel(self)
 
+        self.initUI()
+
 # Start the application
 if __name__ == "__main__":
     app = QApplication(sys.argv)
