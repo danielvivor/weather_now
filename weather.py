@@ -97,7 +97,8 @@ class WeatherApp(QWidget):
         if not city:
             self.display_error("Please enter a city name.")
             return
-
+        
+        self.get_weather_button.setText("Loading...")
 
 
 # Start the application
