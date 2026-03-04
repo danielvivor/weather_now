@@ -91,6 +91,8 @@ class WeatherApp(QWidget):
         if not api_key:
             self.display_error("API key missing.\nAdd it to config.json under api → key.")
             return
+        
+        city = self.city_input.text().strip()
 
 
 
