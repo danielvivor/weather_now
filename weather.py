@@ -106,6 +106,19 @@ class WeatherApp(QWidget):
             f"q={city}&appid={api_key}&units=metric"
         )
 
+        try:
+            response = requests.get(url, timeout=5)
+            response.raise_for_status()
+            data = response.json()
+
+            if str(data.get("cod")) == "200":
+                self.display_weather(data)
+            else:
+                self.display_error(data.get("message", "Unknown error"))
+            
+        except requests.exceptions.HTTPError as http_error:
+            status = http_error.response.status_code
+
 
 
 # Start the application
