@@ -71,6 +71,9 @@ class WeatherApp(QWidget):
         try:
             with open("styles.qss", "r") as f:
                 self.setStyleSheet(f.read())
+        except FileNotFoundError:
+            print("Warning: styles.qss not found. Using default styling.")
+
 
 
 
