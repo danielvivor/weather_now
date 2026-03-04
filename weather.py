@@ -31,6 +31,7 @@ class WeatherApp(QWidget):
 
         self.temperature_label = QLabel(self)
         self.emoji_label = QLabel(self)
+        self.description_label = QLabel(self)
 
 # Start the application
 if __name__ == "__main__":
