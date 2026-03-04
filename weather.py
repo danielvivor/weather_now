@@ -99,6 +99,7 @@ class WeatherApp(QWidget):
             return
         
         self.get_weather_button.setText("Loading...")
+        self.get_weather_button.setEnabled(False)
 
 
 # Start the application
