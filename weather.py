@@ -27,6 +27,8 @@ class WeatherApp(QWidget):
         self.city_input = QLineEdit(self)
         self.get_weather_button = QPushButton("Get Weather", self)
 
+        self.error_label = QLabel("")  # dedicated error label
+
 # Start the application
 if __name__ == "__main__":
     app = QApplication(sys.argv)
