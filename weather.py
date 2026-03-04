@@ -35,6 +35,11 @@ class WeatherApp(QWidget):
 
         self.initUI()
 
+ # Build the layout and connect events
+    def initUI(self):
+        self.setWindowTitle("Weather Now")
+
+
 # Start the application
 if __name__ == "__main__":
     app = QApplication(sys.argv)
