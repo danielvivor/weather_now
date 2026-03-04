@@ -51,6 +51,8 @@ class WeatherApp(QWidget):
         vbox.addWidget(self.emoji_label)
         vbox.addWidget(self.description_label)
 
+        self.setLayout(vbox)
+
 
 # Start the application
 if __name__ == "__main__":
