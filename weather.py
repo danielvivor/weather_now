@@ -74,6 +74,8 @@ class WeatherApp(QWidget):
         except FileNotFoundError:
             print("Warning: styles.qss not found. Using default styling.")
 
+        self.get_weather_button.clicked.connect(self.get_weather)
+
 
 
 
