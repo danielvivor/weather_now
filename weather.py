@@ -68,6 +68,11 @@ class WeatherApp(QWidget):
         self.description_label.setObjectName("description_label")
         self.error_label.setObjectName("error_label")
 
+        try:
+            with open("styles.qss", "r") as f:
+                self.setStyleSheet(f.read())
+
+
 
 # Start the application
 if __name__ == "__main__":
