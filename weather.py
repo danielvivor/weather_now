@@ -41,6 +41,16 @@ class WeatherApp(QWidget):
 
         vbox = QVBoxLayout()
 
+        vbox.addWidget(self.city_label)
+        vbox.addWidget(self.city_input)
+        vbox.addWidget(self.get_weather_button)
+
+        vbox.addWidget(self.error_label)
+
+        vbox.addWidget(self.temperature_label)
+        vbox.addWidget(self.emoji_label)
+        vbox.addWidget(self.description_label)
+
 
 # Start the application
 if __name__ == "__main__":
