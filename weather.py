@@ -94,6 +94,10 @@ class WeatherApp(QWidget):
         
         city = self.city_input.text().strip()
 
+        if not city:
+            self.display_error("Please enter a city name.")
+            return
+
 
 
 # Start the application
