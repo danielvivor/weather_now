@@ -163,6 +163,10 @@ class WeatherApp(QWidget):
     def display_weather(self, data):
         self.error_label.clear()
 
+        temp_c = data["main"]["temp"]
+        temp_f = temp_c * 9 / 5 + 32
+
+
 
 
 
