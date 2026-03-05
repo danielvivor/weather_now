@@ -119,6 +119,27 @@ class WeatherApp(QWidget):
         except requests.exceptions.HTTPError as http_error:
             status = http_error.response.status_code
 
+            match status:
+                case 400:
+                    self.display_error("Bad request:\nPlease check your input")
+                case 401:
+                    self.display_error("Unauthorized:\nInvalid API key")
+                case 403:
+                    self.display_error("Forbidden:\nAccess denied")
+                case 404:
+                    self.display_error("Not Found:\nCity not found")
+                case 500:
+                    self.display_error("Server error:\nTry again later")
+                case 502:
+                    self.display_error("Bad gateway:\nServer error")
+                case 503:
+                    self.display_error("Service unavailable:\nServer down")
+                case 504:
+                    self.display_error("Gateway timeout:\nServer not responding")
+                case _:
+                    self.display_error(f"HTTP error occurred:\n{http_error}")
+
+
 
 
 # Start the application
