@@ -148,6 +148,10 @@ class WeatherApp(QWidget):
         except requests.exceptions.RequestException as req_error:
             self.display_error(f"Request Error:\n{req_error}")
 
+        finally:
+            self.get_weather_button.setText("Get Weather")
+            self.get_weather_button.setEnabled(True)
+
 
 
 
