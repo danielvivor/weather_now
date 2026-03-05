@@ -1,9 +1,8 @@
 # Import required modules
 import sys  # handles systems variables for python interpreter
-
 import requests  # allows us to send HTTP requests
-
 import json  # read API key from creds.json file
+import argparse  # for command-line argument parsing (not used in this code but can be useful for future enhancements)
 
 from PyQt5.QtWidgets import (
     QApplication,  # main application class for PyQt5
