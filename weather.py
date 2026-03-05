@@ -196,7 +196,15 @@ class WeatherApp(QWidget):
 
 # Start the application
 if __name__ == "__main__":
-    app = QApplication(sys.argv)
-    weather_app = WeatherApp()
-    weather_app.show()
-    sys.exit(app.exec_())
+    parser = argparse.ArgumentParser(description="Weather App with GUI and CLI modes")
+    parser.add_argument("--cli", action="store_true", help="Run in command-line mode")
+    args = parser.parse_args()
+
+    if args.cli:
+        from cli import run_cli
+        run_cli()
+    else:
+        app = QApplication(sys.argv)
+        weather_app = WeatherApp()
+        weather_app.show()
+        sys.exit(app.exec_())
