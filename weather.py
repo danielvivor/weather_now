@@ -166,6 +166,10 @@ class WeatherApp(QWidget):
         temp_c = data["main"]["temp"]
         temp_f = temp_c * 9 / 5 + 32
 
+        main = data["weather"][0]["main"]
+        description = data["weather"][0]["description"].capitalize()
+
+
 
 
 
