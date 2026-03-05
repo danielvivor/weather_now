@@ -152,6 +152,13 @@ class WeatherApp(QWidget):
             self.get_weather_button.setText("Get Weather")
             self.get_weather_button.setEnabled(True)
 
+ # Display error messages in the GUI
+    def display_error(self, message):
+        self.error_label.setText(message)
+        self.temperature_label.clear()
+        self.emoji_label.clear()
+        self.description_label.clear()
+
 
 
 
