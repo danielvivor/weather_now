@@ -173,12 +173,27 @@ class WeatherApp(QWidget):
         self.emoji_label.setText(self.get_weather_emoji(main))
         self.description_label.setText(description)
 
+    # Convert weather "main" → emoji
+    @staticmethod
+    def get_weather_emoji(main):
 
+        emoji_map = {
+            "Thunderstorm": "⛈️",
+            "Drizzle": "🌦️",
+            "Rain": "☔",
+            "Snow": "❄️",
+            "Mist": "🌫️",
+            "Smoke": "🌫️",
+            "Haze": "🌫️",
+            "Dust": "🌫️",
+            "Fog": "🌫️",
+            "Squall": "🌬️",
+            "Tornado": "🌪️",
+            "Clear": "☀️",
+            "Clouds": "☁️",
+        }
 
-
-
-
-
+        return emoji_map.get(main, "")
 
 # Start the application
 if __name__ == "__main__":
