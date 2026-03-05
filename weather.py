@@ -80,16 +80,16 @@ class WeatherApp(QWidget):
     # Fetch weather data from the API
     def get_weather(self):
 
-        # Read API key from config.json
+        # Read API key from creds.json
         try:
-            with open("config.json", "r") as f:
-                config = json.load(f)
-                api_key = config["api"]["key"]
+            with open("creds.json", "r") as f:
+                creds = json.load(f)
+                api_key = creds["api"]["key"]
         except (FileNotFoundError, KeyError, json.JSONDecodeError):
             api_key = None
 
         if not api_key:
-            self.display_error("API key missing.\nAdd it to config.json under api → key.")
+            self.display_error("API key missing.\nAdd it to creds.json under api → key.")
             return
         
         city = self.city_input.text().strip()
