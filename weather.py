@@ -16,7 +16,7 @@ from PyQt5.QtWidgets import (
 from PyQt5.QtCore import (
     Qt,
 )  # used for alignment and other core functionalities in PyQt5
-
+from weather_api import get_weather # separate module for API calls
 
 # Create the main application class
 class WeatherApp(QWidget):
