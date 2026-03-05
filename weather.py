@@ -159,6 +159,11 @@ class WeatherApp(QWidget):
         self.emoji_label.clear()
         self.description_label.clear()
 
+# Display weather information in the GUI
+    def display_weather(self, data):
+        self.error_label.clear()
+
+
 
 
 
