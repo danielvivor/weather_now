@@ -42,6 +42,17 @@ def add_entry(city):
     for i, entry in enumerate(data, start=1):
         print(f"{i}. {entry['city']} — {entry['temp_c']}°C — {entry['description']}")
 
+    def delete_entry(index):
+        data = load_dataset()
+        if index < 1 or index > len(data):
+            print("Invalid index")
+            return
+
+        removed = data.pop(index - 1)
+        save_dataset(data)
+        print(f"Deleted entry for {removed['city']}")
+
+
 
 
 
