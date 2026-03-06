@@ -18,3 +18,20 @@ def load_api_key():
             return config["api"]["key"]
     except:
         return None
+
+def get_weather(city):
+    api_key = load_api_key()
+    if not api_key:
+        return None
+
+    url = (
+        f"https://api.openweathermap.org/data/2.5/weather?"
+        f"q={city}&appid={api_key}&units=metric"
+    )
+
+    try:
+        response = requests.get(url, timeout=5)
+        response.raise_for_status()
+        return response.json()
+    except:
+        return None
