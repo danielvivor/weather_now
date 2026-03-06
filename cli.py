@@ -33,5 +33,15 @@ def add_entry(city):
 
     print(f"Added weather for {city}")
 
+    def list_entries():
+        data = load_dataset()
+    if not data:
+        print("Dataset is empty")
+        return
+
+    for i, entry in enumerate(data, start=1):
+        print(f"{i}. {entry['city']} — {entry['temp_c']}°C — {entry['description']}")
+
+
 
 
