@@ -1,18 +1,20 @@
-import json # for reading API key from creds.json
-import os # for checking if creds.json exists
+import json
+import os
 from weather_api import get_weather
 
 DATASET = "weather_history.json"
+
 
 def load_dataset():
     if not os.path.exists(DATASET):
         return []
     with open(DATASET, "r") as f:
         return json.load(f)
-    
-    def save_dataset(data):
-        with open(DATASET, "w") as f:
-            json.dump(data, f, indent=4)
+
+
+def save_dataset(data):
+    with open(DATASET, "w") as f:
+        json.dump(data, f, indent=4)
 
 
 def add_entry(city):
@@ -33,8 +35,9 @@ def add_entry(city):
 
     print(f"Added weather for {city}")
 
-    def list_entries():
-        data = load_dataset()
+
+def list_entries():
+    data = load_dataset()
     if not data:
         print("Dataset is empty")
         return
@@ -42,42 +45,39 @@ def add_entry(city):
     for i, entry in enumerate(data, start=1):
         print(f"{i}. {entry['city']} — {entry['temp_c']}°C — {entry['description']}")
 
-    def delete_entry(index):
-        data = load_dataset()
-        if index < 1 or index > len(data):
-            print("Invalid index")
-            return
 
-        removed = data.pop(index - 1)
-        save_dataset(data)
-        print(f"Deleted entry for {removed['city']}")
+def delete_entry(index):
+    data = load_dataset()
+    if index < 1 or index > len(data):
+        print("Invalid index")
+        return
 
-    def run_cli():
-        print("Weather CLI Mode")
-        print("Commands: add <city>, list, delete <index>, exit")
+    removed = data.pop(index - 1)
+    save_dataset(data)
+    print(f"Deleted entry for {removed['city']}")
 
-        while True:
-            cmd = input("> ").strip().split()
 
-            if not cmd:
-                continue
+def run_cli():
+    print("Weather CLI Mode")
+    print("Commands: add <city>, list, delete <index>, exit")
 
-            if cmd[0] == "add" and len(cmd) > 1:
-                add_entry(" ".join(cmd[1:]))
+    while True:
+        cmd = input("> ").strip().split()
 
-            elif cmd[0] == "list":
-                list_entries()
+        if not cmd:
+            continue
 
-            elif cmd[0] == "delete" and len(cmd) > 1:
-                delete_entry(int(cmd[1]))
+        if cmd[0] == "add" and len(cmd) > 1:
+            add_entry(" ".join(cmd[1:]))
 
-            elif cmd[0] == "exit":
-                break
+        elif cmd[0] == "list":
+            list_entries()
+
+        elif cmd[0] == "delete" and len(cmd) > 1:
+            delete_entry(int(cmd[1]))
+
+        elif cmd[0] == "exit":
+            break
 
         else:
             print("Unknown command")
-
-
-
-
-
