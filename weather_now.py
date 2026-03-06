@@ -100,8 +100,7 @@ class WeatherApp(QWidget):
 
         if not api_key:
             self.display_error(
-                "API key missing.\n"
-                "Add it to creds.json under api → key."
+                "API key missing.\n" "Add it to creds.json under api → key."
             )
             return
 
@@ -126,9 +125,7 @@ class WeatherApp(QWidget):
             if str(data.get("cod")) == "200":
                 self.display_weather(data)
             else:
-                self.display_error(
-                    data.get("message", "Unknown error")
-                )
+                self.display_error(data.get("message", "Unknown error"))
 
         except requests.exceptions.HTTPError as http_error:
             status = http_error.response.status_code
@@ -136,64 +133,35 @@ class WeatherApp(QWidget):
             # Match HTTP status codes to messages
             match status:
                 case 400:
-                    self.display_error(
-                        "Bad request:\nPlease check your input"
-                    )
+                    self.display_error("Bad request:\nPlease check your input")
                 case 401:
-                    self.display_error(
-                        "Unauthorized:\nInvalid API key"
-                    )
+                    self.display_error("Unauthorized:\nInvalid API key")
                 case 403:
-                    self.display_error(
-                        "Forbidden:\nAccess denied"
-                    )
+                    self.display_error("Forbidden:\nAccess denied")
                 case 404:
-                    self.display_error(
-                        "Not Found:\nCity not found"
-                    )
+                    self.display_error("Not Found:\nCity not found")
                 case 500:
-                    self.display_error(
-                        "Server error:\nTry again later"
-                    )
+                    self.display_error("Server error:\nTry again later")
                 case 502:
-                    self.display_error(
-                        "Bad gateway:\nServer error"
-                    )
+                    self.display_error("Bad gateway:\nServer error")
                 case 503:
-                    self.display_error(
-                        "Service unavailable:\nServer down"
-                    )
+                    self.display_error("Service unavailable:\nServer down")
                 case 504:
-                    self.display_error(
-                        "Gateway timeout:\nServer not responding"
-                    )
+                    self.display_error("Gateway timeout:\nServer not responding")
                 case _:
-                    self.display_error(
-                        f"HTTP error occurred:\n{http_error}"
-                    )
+                    self.display_error(f"HTTP error occurred:\n{http_error}")
 
         except requests.exceptions.ConnectionError:
-            self.display_error(
-                "Connection Error:\n"
-                "Check your internet connection"
-            )
+            self.display_error("Connection Error:\n" "Check your internet connection")
 
         except requests.exceptions.Timeout:
-            self.display_error(
-                "Timeout Error:\n"
-                "The request timed out"
-            )
+            self.display_error("Timeout Error:\n" "The request timed out")
 
         except requests.exceptions.TooManyRedirects:
-            self.display_error(
-                "Too many redirects:\n"
-                "Check the URL"
-            )
+            self.display_error("Too many redirects:\n" "Check the URL")
 
         except requests.exceptions.RequestException as req_error:
-            self.display_error(
-                f"Request Error:\n{req_error}"
-            )
+            self.display_error(f"Request Error:\n{req_error}")
 
         finally:
             self.get_weather_button.setText("Get Weather")
@@ -216,9 +184,7 @@ class WeatherApp(QWidget):
         main = data["weather"][0]["main"]
         description = data["weather"][0]["description"].capitalize()
 
-        self.temperature_label.setText(
-            f"{temp_c:.0f}°C | {temp_f:.0f}°F"
-        )
+        self.temperature_label.setText(f"{temp_c:.0f}°C | {temp_f:.0f}°F")
         self.emoji_label.setText(self.get_weather_emoji(main))
         self.description_label.setText(description)
 
@@ -245,9 +211,7 @@ class WeatherApp(QWidget):
 
 # Start the application
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(
-        description="Weather App with GUI and CLI modes"
-    )
+    parser = argparse.ArgumentParser(description="Weather App with GUI and CLI modes")
     parser.add_argument(
         "--cli",
         action="store_true",
@@ -257,6 +221,7 @@ if __name__ == "__main__":
 
     if args.cli:
         from cli import run_cli
+
         run_cli()
     else:
         app = QApplication(sys.argv)
