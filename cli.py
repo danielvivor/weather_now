@@ -52,6 +52,31 @@ def add_entry(city):
         save_dataset(data)
         print(f"Deleted entry for {removed['city']}")
 
+    def run_cli():
+        print("Weather CLI Mode")
+        print("Commands: add <city>, list, delete <index>, exit")
+
+        while True:
+            cmd = input("> ").strip().split()
+
+            if not cmd:
+                continue
+
+            if cmd[0] == "add" and len(cmd) > 1:
+                add_entry(" ".join(cmd[1:]))
+
+            elif cmd[0] == "list":
+                list_entries()
+
+            elif cmd[0] == "delete" and len(cmd) > 1:
+                delete_entry(int(cmd[1]))
+
+            elif cmd[0] == "exit":
+                break
+
+        else:
+            print("Unknown command")
+
 
 
 
