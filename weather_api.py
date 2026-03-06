@@ -12,7 +12,7 @@ def resource_path(relative_path):
 
 def load_api_key():
     try:
-        config_path = resource_path("config.json")
+        config_path = resource_path("creds.json")
         with open(config_path, "r") as f:
             config = json.load(f)
             return config["api"]["key"]
