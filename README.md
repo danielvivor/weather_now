@@ -18,28 +18,28 @@ Weather Now is built to be easy to run, easy to understand, and easy to extend. 
 ## Screenshots
 ## Testing documentation  
 Manual Testing Table — (PyQt5)/(GUI)
-| Test ID | Scenario                            | Steps                                      | Expected Result | Actual Result | Status |
-|---------|-------------------------------------|--------------------------------------------|-----------------|---------------|--------|
-| T1      | Application launches                |Run   `weather_now.py`                      |                 |               |        |
-| T2      | Empty city input                    |Leave input blank<br>→Click "Get Weather"   |                 |               |        |
-| T3      | Missing creds.json                  |Remove/rename config.json<br>→ click button |                 |               |        |
-| T4      | Invalid JSON in creds               |Break JSON syntax<br>→ run app              |                 |               |        |
-| T5      | Missing API key field               |Remove key from config.json                 |                 |               |        |
-| T6      | Invalid API key                     |Enter fake key<br>→ search city             |                 |               |        |
-| T7      | Valid city                          |                                            |                 |               |        |
-| T8      | Invalid city                        |                                            |                 |               |        |
-| T9      | No internet                         |                                            |                 |               |        |
-| T10     | API timeout                         |                                            |                 |               |        |
-| T11     | API server error                    |                                            |                 |               |        |
-| T12     | Loading state                       |                                            |                 |               |        |
-| T13     | Button restores                     |                                            |                 |               |        |
-| T14     | Emoji mapping                       |                                            |                 |               |        |
-| T15     | Temperature conversion              |                                            |                 |               |        |
-| T16     | Missing stylesheet                  |                                            |                 |               |        |
-| T17     | Press `Enter` on keyboard to search |                                            |                 |               |        |
-| T18     | Error clears on success             |                                            |                 |               |        |
-| T19     | Weather clears on error             |                                            |                 |               |        |
-| T20     | Application exit                    |                                            |                 |               |        |
+| Test ID | Scenario                            | Steps                                        | Expected Result                          | Actual Result |
+|---------|-------------------------------------|----------------------------------------------|------------------------------------------|---------------|
+| T1      | Application launches                |Run   `weather_now.py`                        |GUI window opens with all widgets visible |As expected    |
+| T2      | Empty city input                    |Leave input blank<br>→Click "Get Weather"     |Error: “Please enter a city name.”        |As expected    |
+| T3      | Missing creds.json                  |Remove/rename config.json<br>→ click button   |Error: “API key missing…”                 |As expected    |
+| T4      | Invalid JSON in creds               |Break JSON syntax<br>→ run app                |Error: “API key missing…”                 |As expected    |
+| T5      | Missing API key field               |Remove `key` from creds.json                  |Error: “API key missing…”                 |As expected    |
+| T6      | Invalid API key                     |Enter fake key<br>→ search city               |Error: “Unauthorized: Invalid API key”    |As expected    |
+| T7      | Valid city                          |Enter, for example “London”<br>→ click button |Weather data displayed                    |As expected    |
+| T8      | Invalid city                        |Enter for example “asdfgh”<br>→ click button  |Error: “City not found”                   |As expected    |
+| T9      | No internet                         |Disable internet connection<br> → click button|Error: “Connection Error…”                |As expected    |
+| T10     | API timeout                         |Simulate slow network                         |Error: “Timeout Error…”                   |As expected    |
+| T11     | API server error                    |Force 500 response                            |Error: “Server error…”                    |As expected    |
+| T12     | Loading state                       |Click button                                  |Button shows “Loading…” and disables      |As expected    |
+| T13     | Button restores                     |After request completes                       |Button returns to normal                  |As expected    |
+| T14     | Emoji mapping                       |Test weather types                            |Correct emoji displayed                   |As expected    |
+| T15     | Temperature conversion              |Compare °C/°F                                 |Correct conversion shown                  |As expected    |
+| T16     | Missing stylesheet                  |Remove style.qss                              |Console warning, but app still works      |As expected    |
+| T17     | Press `Enter` on keyboard to search |Type city<br>→ press Enter                    |Same as clicking button                   |As expected    |
+| T18     | Error clears on success             |Trigger error<br>→ then valid city            |Error label clears                        |As expected    |
+| T19     | Weather clears on error             |Show weather<br>→ then trigger error          |Weather labels clear                      |As expected    |
+| T20     | Application exit                    |Close window                                  |App exits cleanly                         |As expected    |
 
 
 ## Development rationale
@@ -63,6 +63,12 @@ weather_now/
 ```
 
  ## WInstallation & Usage Guide
+ ### Requirements
+• 	Python v3.10 or later  
+• 	Internet connection (for API requests)  
+• 	OpenWeatherMap API key  
+• 	Required Python packages: `PyQt5` `requests`
+
  ### Installation
  **Clone the repository:**  
  `git clone https://github.com/<your-username>/weather_now.git`
@@ -112,7 +118,22 @@ Commands
 The dataset is stored in:  
 `weather_history.json`  
 This file is ignored by Git to avoid committing user‑specific data.
+### Usage Notes 
+•  If the API key is missing or invalid, the app will show a clear error message.  
+• 	If the city name is empty or incorrect, the app will notify the user.  
+• 	If the internet connection is unavailable, the app will display a connection error.  
+• 	The button disables during loading to prevent duplicate requests.  
+• 	The app uses an external stylesheet () for visual styling.
+### Troubleshooting
+|Issue              |Cause                        |Solution                  |
+|-------------------|-----------------------------|--------------------------|
+|"API key missing"  |creds.json missing or invalid|Recreate creds.jsson      |
+|"City not found"   |Invalid city name            | Check spelling           |
+|"Connection Error" |No internet                  |Reconnect and retry       |
+|No styling applied |Missing `style.qss`          |Add or recreate stylesheet|
 
+## Application Flowchart (PyQt5 GUI)
  
+
 
 
