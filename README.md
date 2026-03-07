@@ -9,6 +9,59 @@ Weather Now is built to be easy to run, easy to understand, and easy to extend. 
 • 	Simple project structure and maintainable code,  
 • 	Real‑world features like configuration files and data persistence.
 
+## Purpose of the app
+## Target audience
+## Features
+## How it works
+## External libraries used
+## Attribution
+## Screenshots
+## Testing documentation  
+Manual Testing Table — (PyQt5)/(GUI)
+| Test ID | Scenario                            | Steps                                      | Expected Result | Actual Result | Status |
+|---------|-------------------------------------|--------------------------------------------|-----------------|---------------|--------|
+| T1      | Application launches                |Run   `weather_now.py`                      |                 |               |        |
+| T2      | Empty city input                    |Leave input blank<br>→Click "Get Weather"   |                 |               |        |
+| T3      | Missing creds.json                  |Remove/rename config.json<br>→ click button |                 |               |        |
+| T4      | Invalid JSON in creds               |Break JSON syntax<br>→ run app              |                 |               |        |
+| T5      | Missing API key field               |Remove key from config.json                 |                 |               |        |
+| T6      | Invalid API key                     |Enter fake key<br>→ search city             |                 |               |        |
+| T7      | Valid city                          |                                            |                 |               |        |
+| T8      | Invalid city                        |                                            |                 |               |        |
+| T9      | No internet                         |                                            |                 |               |        |
+| T10     | API timeout                         |                                            |                 |               |        |
+| T11     | API server error                    |                                            |                 |               |        |
+| T12     | Loading state                       |                                            |                 |               |        |
+| T13     | Button restores                     |                                            |                 |               |        |
+| T14     | Emoji mapping                       |                                            |                 |               |        |
+| T15     | Temperature conversion              |                                            |                 |               |        |
+| T16     | Missing stylesheet                  |                                            |                 |               |        |
+| T17     | Press `Enter` on keyboard to search |                                            |                 |               |        |
+| T18     | Error clears on success             |                                            |                 |               |        |
+| T19     | Weather clears on error             |                                            |                 |               |        |
+| T20     | Application exit                    |                                            |                 |               |        |
+
+
+## Development rationale
+## Deployment instructions
+
+## Project folder structure
+weather_now/
+```
+├── weather_now.py         # Main GUI + CLI entry point
+├── weather_api.py         # API communication module
+├── cli.py                 # CLI logic
+├── run.py                 # Simple launcher used for testing the virtual environment
+├── styles.qss             # GUI stylesheet
+├── creds.json             # User-provided API key (not included in repo)
+├── weather_history.json   # CLI dataset (ignored)
+├── .flake8                # Linting configuration for enforcing consistent code style
+
+├── requirements.txt       # Python dependencies
+├── .gitignore             # Files and folders excluded from Git tracking
+└── README.md              # Project documentation
+```
+
  ## WInstallation & Usage Guide
  ### Installation
  **Clone the repository:**  
@@ -61,4 +114,5 @@ The dataset is stored in:
 This file is ignored by Git to avoid committing user‑specific data.
 
  
+
 
