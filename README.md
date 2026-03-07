@@ -133,7 +133,8 @@ This file is ignored by Git to avoid committing user‑specific data.
 |No styling applied |Missing `style.qss`          |Add or recreate stylesheet|
 
 ## Application Flowchart (PyQt5 GUI)
- 
+![Application flowchart](weather_now/app_flowchart.png)
+
 
 
 
