@@ -186,8 +186,10 @@ The following flowchart illustrates the core logic behind Weather Now, showing h
 ## Data Flow Diagram
 The Data Flow Diagram (DFD) provides a high‑level view of how information moves through Weather Now, from user input to API communication and final output. It highlights the major data sources, processing steps, and outputs that make up the core functionality of the application.
 This diagram helps clarify how the system handles requests, transforms raw API data, and delivers weather information through both the GUI and CLI interfaces.
+[Data flow diagram](docs/dataflow.pdf)
 
 ## Known Issues / Limitations
+
 
 
 
