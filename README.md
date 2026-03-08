@@ -8,16 +8,16 @@
 <h6>Future enhancements</h6>
 <h6>Project folder structure</h6>
 <h6>Installation & User Guide</h6>
- <h6>Troubleshooting</h6>
+<h6>Troubleshooting</h6>
+<h6>Known Issues / Limitations</h6>
+<h6>Testing documentation</h6>
 <h6>External libraries used</h6>
 <h6>Screenshots</h6>
-<h6>Testing documentation</h6>
+
 <h6>Development rationale</h6>
 <h6>Deployment instructions</h6>
-
 <h6>Application Flowchart</h6>
 <h6>Data Flow Diagram</h6>
-<h6>Known Issues / Limitations</h6>
 
 </div>
 
@@ -177,34 +177,57 @@ This file is ignored by Git to avoid committing user‑sensitive data.
 |"Connection Error" |No internet                  |Reconnect and retry       |
 |No styling applied |Missing `style.qss`          |Add or recreate stylesheet|
 
+## Known Issues / Limitations
+The following limitations are known or expected:
+
+- The GUI performs network requests on the main thread, which may cause temporary freezing during slow or unstable connections.
+PyQt’s event loop can only do one thing at a time, so while the network request is happening:
+• 	the window cannot repaint
+• 	buttons cannot be clicked
+• 	the OS may mark the window as “Not Responding”
+• 	animations or loading indicators cannot run
+
+Why it matters:
+If the API is slow or the user has poor internet, the app feels unresponsive.
+
+- Input validation is minimal; unusual or malformed city names may produce unexpected API errors.
+- API rate limits (HTTP 429) are not currently handled.
+- The application does not cache results or retry failed requests.
+- The API key is stored in plain text in `creds.json`, which is not secure for production use.
+- No automated tests are included; all testing is manual.
+- The CLI and GUI do not yet share a unified API wrapper.
+- Corrupted JSON files in CLI mode may cause errors.
+- Localization and internationalization are not implemented.
+
+## Testing documentation  
+Manual Testing Table — (PyQt5/GUI)
+| Test ID | Scenario                            | Steps                                        | Expected Result                          | Actual Result |Status|
+|---------|-------------------------------------|----------------------------------------------|------------------------------------------|---------------|------|
+| T1      | Application launches                |Run `weather_now.py`                          |GUI window opens with all widgets visible |As expected    |  ✅  |
+| T2      | Empty city input                    |Leave input blank<br>→Click "Get Weather"     |Error: “Please enter a city name.”        |As expected    | ✅   |
+| T3      | Missing creds.json                  |Remove/rename creds.json<br>→ click button    |Error: “API key missing…”                 |As expected    |  ✅  |
+| T4      | Invalid JSON in creds               |Break JSON syntax<br>→ run app                |Error: “API key missing…”                 |As expected    | ✅  |
+| T5      | Missing API key field               |Remove `key` from creds.json                  |Error: “API key missing…”                 |As expected    | ✅   |
+| T6      | Invalid API key                     |Enter fake key<br>→ search city               |Error: “Unauthorized: Invalid API key”    |As expected    |  ✅  |
+| T7      | Valid city                          |Enter, for example “London”<br>→ click button |Weather data displayed                    |As expected    |  ✅  |
+| T8      | Invalid city                        |Enter for example “asdfgh”<br>→ click button  |Error: “City not found”                   |As expected    |   ✅ |
+| T9      | No internet                         |Disable internet connection<br> → click button|Error: “Connection Error…”                |As expected    | ✅   |
+| T10     | API timeout                         |Simulate slow network                         |Error: “Timeout Error…”                   |As expected    |  ✅  |
+| T11     | API server error                    |Force 500 response                            |Error: “Server error…”                    |Not Achieved   |  ❌  |
+| T12     | Loading state                       |Click button                                  |Button shows “Loading…” and disables      |As expected    |  ✅  |
+| T13     | Button restores                     |After request completes                       |Button returns to normal                  |As expected    |  ✅  |
+| T14     | Emoji mapping                       |Test weather types                            |Correct emoji displayed                   |As expected    |  ✅  |
+| T15     | Temperature conversion              |Compare °C/°F                                 |Correct conversion shown                  |As expected    |  ✅  |
+| T16     | Missing stylesheet                  |Remove style.qss                              |Console warning, but app still works      |Not Achieved   |  ❌  |
+| T17     | Press `Enter` on keyboard to search |Type city<br>→ press Enter                    |Same as clicking button                   |As expected    |  ✅ |
+| T18     | Error clears on success             |Trigger error<br>→ then valid city            |Error label clears                        |As expected    |  ✅ |
+| T19     | Weather clears on error             |Show weather<br>→ then trigger error          |Weather labels clear                      |As expected    |  ✅ |
+| T20     | Application exit                    |Close window                                  |App exits cleanly                         |As expected    | ✅  |
+
 
 ## External libraries used
 ## Attribution
 ## Screenshots
-## Testing documentation  
-Manual Testing Table — (PyQt5)/(GUI)
-| Test ID | Scenario                            | Steps                                        | Expected Result                          | Actual Result |
-|---------|-------------------------------------|----------------------------------------------|------------------------------------------|---------------|
-| T1      | Application launches                |Run   `weather_now.py`                        |GUI window opens with all widgets visible |As expected    |
-| T2      | Empty city input                    |Leave input blank<br>→Click "Get Weather"     |Error: “Please enter a city name.”        |As expected    |
-| T3      | Missing creds.json                  |Remove/rename config.json<br>→ click button   |Error: “API key missing…”                 |As expected    |
-| T4      | Invalid JSON in creds               |Break JSON syntax<br>→ run app                |Error: “API key missing…”                 |As expected    |
-| T5      | Missing API key field               |Remove `key` from creds.json                  |Error: “API key missing…”                 |As expected    |
-| T6      | Invalid API key                     |Enter fake key<br>→ search city               |Error: “Unauthorized: Invalid API key”    |As expected    |
-| T7      | Valid city                          |Enter, for example “London”<br>→ click button |Weather data displayed                    |As expected    |
-| T8      | Invalid city                        |Enter for example “asdfgh”<br>→ click button  |Error: “City not found”                   |As expected    |
-| T9      | No internet                         |Disable internet connection<br> → click button|Error: “Connection Error…”                |As expected    |
-| T10     | API timeout                         |Simulate slow network                         |Error: “Timeout Error…”                   |As expected    |
-| T11     | API server error                    |Force 500 response                            |Error: “Server error…”                    |As expected    |
-| T12     | Loading state                       |Click button                                  |Button shows “Loading…” and disables      |As expected    |
-| T13     | Button restores                     |After request completes                       |Button returns to normal                  |As expected    |
-| T14     | Emoji mapping                       |Test weather types                            |Correct emoji displayed                   |As expected    |
-| T15     | Temperature conversion              |Compare °C/°F                                 |Correct conversion shown                  |As expected    |
-| T16     | Missing stylesheet                  |Remove style.qss                              |Console warning, but app still works      |As expected    |
-| T17     | Press `Enter` on keyboard to search |Type city<br>→ press Enter                    |Same as clicking button                   |As expected    |
-| T18     | Error clears on success             |Trigger error<br>→ then valid city            |Error label clears                        |As expected    |
-| T19     | Weather clears on error             |Show weather<br>→ then trigger error          |Weather labels clear                      |As expected    |
-| T20     | Application exit                    |Close window                                  |App exits cleanly                         |As expected    |
 
 
 ## Development rationale
@@ -218,7 +241,8 @@ The Data Flow Diagram (DFD) provides a high‑level view of how information move
 This diagram helps clarify how the system handles requests, transforms raw API data, and delivers weather information through both the GUI and CLI interfaces.
 [Data flow diagram](docs/dataflow.pdf)
 
-## Known Issues / Limitations
+
+
 
 
 
