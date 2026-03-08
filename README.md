@@ -175,11 +175,12 @@ This file is ignored by Git to avoid committing user‑specific data.
 
 ## Application Flowchart (PyQt5 GUI)
 The following flowchart illustrates the core logic behind Weather Now, showing how the application processes user input, retrieves data from the OpenWeather API, and displays results in both GUI and CLI modes. This visual overview helps clarify the internal structure of the project and highlights how each component interacts within the overall system.
-![Application flowchart](weather_now/images/app_flowchart.png)
+![Application flowchart](images/app_flowchart.png)
 
 ## Data Flow Diagram
 The Data Flow Diagram (DFD) provides a high‑level view of how information moves through Weather Now, from user input to API communication and final output. It highlights the major data sources, processing steps, and outputs that make up the core functionality of the application.
 This diagram helps clarify how the system handles requests, transforms raw API data, and delivers weather information through both the GUI and CLI interfaces.
+
 
 
 
