@@ -1,10 +1,10 @@
 ﻿# Weather Now
 ### Table of contents
-#### Project Introduction (https://github.com/danielvivor/weather_now/edit/main/README.md#project-introduction)
+#### [Project Introduction](#project-introduction)
 #### Purpose of the application (https://github.com/danielvivor/weather_now/edit/main/README.md#purpose-of-the-app)
 #### Target audience (https://github.com/danielvivor/weather_now/edit/main/README.md#target-audience-1)
 #### Features (https://github.com/danielvivor/weather_now/edit/main/README.md#features-1)
-
+#### [Future enhancements](#future-enhancements)
 ## Project Introduction
 Weather Now is a lightweight Python application that lets users quickly check real‑time weather conditions through both a graphical interface and a command‑line tool. The project demonstrates practical API integration, modular code structure, and a polished user experience.
 The GUI, built with PyQt5, provides an intuitive interface for entering a city and instantly viewing temperature, conditions, and descriptive weather details. For users who prefer terminal workflows, the command-line (CLI) mode offers a simple dataset manager that can fetch, store, list, and delete weather entries.
@@ -188,6 +188,7 @@ The Data Flow Diagram (DFD) provides a high‑level view of how information move
 This diagram helps clarify how the system handles requests, transforms raw API data, and delivers weather information through both the GUI and CLI interfaces.
 
 ## Known Issues / Limitations
+
 
 
 
