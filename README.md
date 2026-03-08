@@ -1,19 +1,34 @@
 ﻿# Weather Now
-### Table of contents
-#### [Project Introduction](#project-introduction)
-#### Purpose of the application (https://github.com/danielvivor/weather_now/edit/main/README.md#purpose-of-the-app)
-#### Target audience (https://github.com/danielvivor/weather_now/edit/main/README.md#target-audience-1)
-#### Features (https://github.com/danielvivor/weather_now/edit/main/README.md#features-1)
-#### [Future enhancements](#future-enhancements)
+<div align="center">
+<h2>Table of contents</h2>
+<h6>Project Introduction</h6>
+<h6>Purpose of the application</h6>
+<h6>Target audience</h6>
+<h6>Features</h6>
+<h6>Future enhancements</h6>
+<h6>External libraries used</h6>
+<h6>Screenshots</h6>
+<h6>Testing documentation</h6>
+<h6>Development rationale</h6>
+<h6>Deployment instructions</h6>
+<h6>Project folder structure</h6>
+<h6>Installation & User Guide</h6>
+<h6>Application Flowchart</h6>
+<h6>Data Flow Diagram</h6>
+<h6>Known Issues / Limitations</h6>
+<h6>Troubleshooting</h6>
+</div>
+
 ## Project Introduction
-Weather Now is a lightweight Python application that lets users quickly check real‑time weather conditions through both a graphical interface and a command‑line tool. The project demonstrates practical API integration, modular code structure, and a polished user experience.
-The GUI, built with PyQt5, provides an intuitive interface for entering a city and instantly viewing temperature, conditions, and descriptive weather details. For users who prefer terminal workflows, the command-line (CLI) mode offers a simple dataset manager that can fetch, store, list, and delete weather entries.
-Weather Now is built to be easy to run, easy to understand, and easy to extend. It’s a compact but complete example of:  
-• 	API consumption using,   
+Weather Now is a lightweight Python application that lets a user quickly check real‑time weather conditions through either a graphical interface or a command‑line tool. The project demonstrates practical API integration, modular code structure, and a polished user experience.
+The graphical user interface (GUI), built with PyQt5, provides an intuitive interface for entering a city and instantly viewing temperature and descriptive weather details. For users who prefer terminal workflows, the command-line (CLI) mode offers a simple dataset manager that can fetch, store, list, and delete weather entries.
+Weather Now is built to be easy to run, understand, and to extend. It is an example of:  
+
+• 	API use,   
 • 	GUI development with PyQt5,  
 • 	CLI design with argument parsing,  
 • 	Simple project structure and maintainable code,  
-• 	Real‑world features like configuration files and data persistence.
+• 	Real‑world practices such as configuration file management and data persistence.
 
 ## Purpose of the app
 Weather Now was built to explore how real‑time data, clean UI design, and modular Python architecture can come together in a practical, everyday tool. The project demonstrates how to integrate external APIs, manage configuration securely, and deliver the same functionality through both a graphical interface and a command‑line workflow.
@@ -59,7 +74,6 @@ Introduce icons, themes, and layout improvements to make the interface more visu
 Package the app as a standalone executable for Windows, making installation easier for non‑technical users.
 • 	Plugin‑Friendly Architecture
 Explore a modular system where additional data sources (e.g., air quality, UV index, sunrise/sunset times) can be added as optional extensions.
-## How it works
 ## External libraries used
 ## Attribution
 ## Screenshots
@@ -109,7 +123,7 @@ weather_now/
 └── README.md              # Project documentation
 ```
 
- ## WInstallation & Usage Guide
+ ## Installation & User Guide
  ### Requirements
 • 	Python v3.10 or later  
 • 	Internet connection (for API requests)  
@@ -189,6 +203,7 @@ This diagram helps clarify how the system handles requests, transforms raw API d
 [Data flow diagram](docs/dataflow.pdf)
 
 ## Known Issues / Limitations
+
 
 
 
