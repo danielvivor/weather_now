@@ -31,32 +31,29 @@ Weather Now is built to be easy to run, understand, and to extend. It is an exam
 • 	Real‑world practices such as configuration file management and data persistence.
 
 ## Purpose of the app
-Weather Now was built to explore how real‑time data, clean UI design, and modular Python architecture can come together in a practical, everyday tool. The project demonstrates how to integrate external APIs, manage configuration securely, and deliver the same functionality through both a graphical interface and a command‑line workflow.
-At its core, the app exists to answer a simple question—“What’s the weather like right now?”—but it does so in a way that highlights good engineering practices: isolated virtual environments, reproducible dependencies, structured modules, and a clear separation between logic and presentation.
-The project also serves as a learning platform, showcasing how Python applications can be packaged, documented, and deployed in a way that mirrors real‑world development standards.
+Weather Now was built to explore how real‑time data, clean UI design, and modular Python architecture can come together in a practical, everyday tool. The project demonstrates how to integrate external APIs, manage configuration securely. It delivers the same functionality through a graphical interface and a command‑line workflow.
+The app answers a simple question—“What’s the weather like right now?”
+The project also serves as a learning platform, showcasing how Python applications can be packaged and deployed in a way that mirrors real‑world development standards.
+
 ## Target audience
-Weather Now is designed for a broad range of users, each benefiting from a different aspect of the application:
-• 	Everyday users who want a quick, clean way to check current weather conditions without navigating ads or cluttered websites.
+Weather Now is designed for a broad range of users:
+• 	Everyday users who want a quick simple way to check current weather conditions without navigating ads or cluttered websites.
 • 	Developers and students looking for a reference project that demonstrates API integration, PyQt5 GUI design, CLI tooling, and modular Python structure.
-• 	Educators and reviewers assessing code quality, documentation, reproducibility, and adherence to best practices in a small but complete software project.
+• 	Educators and reviewers assessing code documentation, reproducibility, and adherence to best practices.
 • 	Command‑line enthusiasts who prefer fast, scriptable weather lookups directly from the terminal.
 • 	Learners exploring Python environments who want to understand how virtual environments, configuration files, and dependency management work in practice.
-Weather Now is intentionally simple on the surface but structured in a way that encourages exploration, extension, and adaptation.
+
 ## Features
-Dual Interface
-• 	GUI Mode powered by PyQt5 for an interactive, user‑friendly experience.
-• 	CLI Mode for quick weather lookups directly from the terminal.
-• 	Real‑Time Weather Data
-• 	Fetches current conditions (temperature, humidity, wind, etc.) from the OpenWeather API.
-• 	Config‑Driven Setup
-• 	API key and default settings stored in a  file.
-• 	Keeps sensitive data out of source control.
+•  Dual Interface (GUI and CLI modes)
+• 	Real‑Time Weather Data (Fetches the current temperature from the OpenWeather)
+• 	Configuration‑driven setup
+• 	API key and default settings stored in a  file
+• 	Keeps sensitive data out of version control
 • 	Isolated Virtual Environment
-• 	Uses a project‑local  to ensure clean, reproducible dependencies.
-• 	 is intentionally excluded from version control.
-• 	Modular Codebase
+• 	Modular codebase
 • 	Clear separation between API logic, UI components, and CLI handlers.
 • 	Easy to extend or integrate into other projects.
+
 ## Future Enhancements
 Weather Now is intentionally lightweight, but there are several meaningful improvements planned to expand its capabilities and refine the user experience. These enhancements aim to make the application more informative, more customizable, and more adaptable to different usage styles.
 🔧 Planned Features
@@ -203,6 +200,7 @@ This diagram helps clarify how the system handles requests, transforms raw API d
 [Data flow diagram](docs/dataflow.pdf)
 
 ## Known Issues / Limitations
+
 
 
 
