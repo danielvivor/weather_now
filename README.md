@@ -180,17 +180,18 @@ This file is ignored by Git to avoid committing user‑sensitive data.
 ## Known Issues / Limitations
 The following limitations are known or expected:
 
-- The GUI performs network requests on the main thread, which may cause temporary freezing during slow or unstable connections.
+1. The GUI performs network requests on the main thread, which may cause temporary freezing during slow or unstable connections.  
 PyQt’s event loop can only do one thing at a time, so while the network request is happening:
-• 	the window cannot repaint
-• 	buttons cannot be clicked
-• 	the OS may mark the window as “Not Responding”
-• 	animations or loading indicators cannot run
 
-Why it matters:
-If the API is slow or the user has poor internet, the app feels unresponsive.
+-The window cannot repaint  
+-Buttons cannot be clicked  
+-The OS may mark the window as “Not Responding”  
+-Animations or loading indicators cannot run
 
-- Input validation is minimal; unusual or malformed city names may produce unexpected API errors.
+Why it matters:  
+If the API is slow or the user has poor internet connection, the app feels unresponsive.
+
+2. Input validation is minimal; unusual or malformed city names may produce unexpected API errors.
 - API rate limits (HTTP 429) are not currently handled.
 - The application does not cache results or retry failed requests.
 - The API key is stored in plain text in `creds.json`, which is not secure for production use.
@@ -240,6 +241,7 @@ The following flowchart illustrates the core logic behind Weather Now, showing h
 The Data Flow Diagram (DFD) provides a high‑level view of how information moves through Weather Now, from user input to API communication and final output. It highlights the major data sources, processing steps, and outputs that make up the core functionality of the application.
 This diagram helps clarify how the system handles requests, transforms raw API data, and delivers weather information through both the GUI and CLI interfaces.
 [Data flow diagram](docs/dataflow.pdf)
+
 
 
 
