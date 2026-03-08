@@ -1,4 +1,10 @@
 ﻿# Weather Now
+### Table of contents
+#### [Project Introduction](#project-introduction)
+#### Purpose of the application (https://github.com/danielvivor/weather_now/edit/main/README.md#purpose-of-the-app)
+#### Target audience (https://github.com/danielvivor/weather_now/edit/main/README.md#target-audience-1)
+#### Features (https://github.com/danielvivor/weather_now/edit/main/README.md#features-1)
+#### [Future enhancements](#future-enhancements)
 ## Project Introduction
 Weather Now is a lightweight Python application that lets users quickly check real‑time weather conditions through both a graphical interface and a command‑line tool. The project demonstrates practical API integration, modular code structure, and a polished user experience.
 The GUI, built with PyQt5, provides an intuitive interface for entering a city and instantly viewing temperature, conditions, and descriptive weather details. For users who prefer terminal workflows, the command-line (CLI) mode offers a simple dataset manager that can fetch, store, list, and delete weather entries.
@@ -10,8 +16,49 @@ Weather Now is built to be easy to run, easy to understand, and easy to extend. 
 • 	Real‑world features like configuration files and data persistence.
 
 ## Purpose of the app
+Weather Now was built to explore how real‑time data, clean UI design, and modular Python architecture can come together in a practical, everyday tool. The project demonstrates how to integrate external APIs, manage configuration securely, and deliver the same functionality through both a graphical interface and a command‑line workflow.
+At its core, the app exists to answer a simple question—“What’s the weather like right now?”—but it does so in a way that highlights good engineering practices: isolated virtual environments, reproducible dependencies, structured modules, and a clear separation between logic and presentation.
+The project also serves as a learning platform, showcasing how Python applications can be packaged, documented, and deployed in a way that mirrors real‑world development standards.
 ## Target audience
+Weather Now is designed for a broad range of users, each benefiting from a different aspect of the application:
+• 	Everyday users who want a quick, clean way to check current weather conditions without navigating ads or cluttered websites.
+• 	Developers and students looking for a reference project that demonstrates API integration, PyQt5 GUI design, CLI tooling, and modular Python structure.
+• 	Educators and reviewers assessing code quality, documentation, reproducibility, and adherence to best practices in a small but complete software project.
+• 	Command‑line enthusiasts who prefer fast, scriptable weather lookups directly from the terminal.
+• 	Learners exploring Python environments who want to understand how virtual environments, configuration files, and dependency management work in practice.
+Weather Now is intentionally simple on the surface but structured in a way that encourages exploration, extension, and adaptation.
 ## Features
+Dual Interface
+• 	GUI Mode powered by PyQt5 for an interactive, user‑friendly experience.
+• 	CLI Mode for quick weather lookups directly from the terminal.
+• 	Real‑Time Weather Data
+• 	Fetches current conditions (temperature, humidity, wind, etc.) from the OpenWeather API.
+• 	Config‑Driven Setup
+• 	API key and default settings stored in a  file.
+• 	Keeps sensitive data out of source control.
+• 	Isolated Virtual Environment
+• 	Uses a project‑local  to ensure clean, reproducible dependencies.
+• 	 is intentionally excluded from version control.
+• 	Modular Codebase
+• 	Clear separation between API logic, UI components, and CLI handlers.
+• 	Easy to extend or integrate into other projects.
+## Future Enhancements
+Weather Now is intentionally lightweight, but there are several meaningful improvements planned to expand its capabilities and refine the user experience. These enhancements aim to make the application more informative, more customizable, and more adaptable to different usage styles.
+🔧 Planned Features
+• 	5‑Day Forecast Support
+Extend the current real‑time weather lookup with multi‑day forecasts, including temperature trends, precipitation probability, and wind patterns.
+• 	Search History & Favorites
+Allow users to save frequently checked locations and quickly revisit previous searches in both GUI and CLI modes.
+• 	Improved Error Handling & Offline Mode
+Provide clearer feedback when API requests fail and offer a fallback mode that displays the last known weather data.
+• 	Unit & Language Customization
+Add support for switching between Celsius/Fahrenheit, metric/imperial units, and multiple UI languages.
+• 	Enhanced GUI Features
+Introduce icons, themes, and layout improvements to make the interface more visually engaging and accessible.
+• 	Packaging & Distribution
+Package the app as a standalone executable for Windows, making installation easier for non‑technical users.
+• 	Plugin‑Friendly Architecture
+Explore a modular system where additional data sources (e.g., air quality, UV index, sunrise/sunset times) can be added as optional extensions.
 ## How it works
 ## External libraries used
 ## Attribution
@@ -133,7 +180,20 @@ This file is ignored by Git to avoid committing user‑specific data.
 |No styling applied |Missing `style.qss`          |Add or recreate stylesheet|
 
 ## Application Flowchart (PyQt5 GUI)
-![Application flowchart](weather_now/images/app_flowchart.png)
+The following flowchart illustrates the core logic behind Weather Now, showing how the application processes user input, retrieves data from the OpenWeather API, and displays results in both GUI and CLI modes. This visual overview helps clarify the internal structure of the project and highlights how each component interacts within the overall system.
+![Application flowchart](images/flowchart.png)
+
+## Data Flow Diagram
+The Data Flow Diagram (DFD) provides a high‑level view of how information moves through Weather Now, from user input to API communication and final output. It highlights the major data sources, processing steps, and outputs that make up the core functionality of the application.
+This diagram helps clarify how the system handles requests, transforms raw API data, and delivers weather information through both the GUI and CLI interfaces.
+
+## Known Issues / Limitations
+
+
+
+
+
+
 
 
 
