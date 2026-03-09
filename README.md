@@ -1,96 +1,91 @@
 ﻿# Weather Now
-### Table of contents
-#### [Project Introduction](#project-introduction)
-#### Purpose of the application (https://github.com/danielvivor/weather_now/edit/main/README.md#purpose-of-the-app)
-#### Target audience (https://github.com/danielvivor/weather_now/edit/main/README.md#target-audience-1)
-#### Features (https://github.com/danielvivor/weather_now/edit/main/README.md#features-1)
-#### [Future enhancements](#future-enhancements)
+<div align="center">
+<h2>Table of contents</h2>
+<h6>Project Introduction</h6>
+<h6>Purpose of the Application</h6>
+<h6>Target audience</h6>
+<h6>Features</h6>
+<h6>Future enhancements</h6>
+<h6>Project folder structure</h6>
+<h6>Installation & User Guide</h6>
+<h6>Troubleshooting</h6>
+<h6>Known Issues / Limitations</h6>
+<h6>Testing documentation</h6>
+<h6>External libraries used</h6>
+<h6>Screenshots</h6>
+
+<h6>Development rationale</h6>
+<h6>Deployment instructions</h6>
+<h6>Application Flowchart</h6>
+<h6>Data Flow Diagram</h6>
+
+</div>
+
 ## Project Introduction
-Weather Now is a lightweight Python application that lets users quickly check real‑time weather conditions through both a graphical interface and a command‑line tool. The project demonstrates practical API integration, modular code structure, and a polished user experience.
-The GUI, built with PyQt5, provides an intuitive interface for entering a city and instantly viewing temperature, conditions, and descriptive weather details. For users who prefer terminal workflows, the command-line (CLI) mode offers a simple dataset manager that can fetch, store, list, and delete weather entries.
-Weather Now is built to be easy to run, easy to understand, and easy to extend. It’s a compact but complete example of:  
-• 	API consumption using,   
+Weather Now is a lightweight Python application that lets a user quickly check real‑time weather conditions through either a graphical interface or a command‑line tool. The project demonstrates practical API integration, modular code structure, and a polished user experience.
+The graphical user interface (GUI), built with PyQt5, provides an intuitive interface for entering a city and instantly viewing temperature and descriptive weather details. For users who prefer terminal workflows, the command-line (CLI) mode offers a simple dataset manager that can fetch, store, list, and delete weather entries.
+Weather Now is built to be easy to run, understand, and to extend. It is an example of:  
+
+• 	API use,   
 • 	GUI development with PyQt5,  
 • 	CLI design with argument parsing,  
 • 	Simple project structure and maintainable code,  
-• 	Real‑world features like configuration files and data persistence.
+• 	Real‑world practices such as configuration file management and data persistence.
 
 ## Purpose of the app
-Weather Now was built to explore how real‑time data, clean UI design, and modular Python architecture can come together in a practical, everyday tool. The project demonstrates how to integrate external APIs, manage configuration securely, and deliver the same functionality through both a graphical interface and a command‑line workflow.
-At its core, the app exists to answer a simple question—“What’s the weather like right now?”—but it does so in a way that highlights good engineering practices: isolated virtual environments, reproducible dependencies, structured modules, and a clear separation between logic and presentation.
-The project also serves as a learning platform, showcasing how Python applications can be packaged, documented, and deployed in a way that mirrors real‑world development standards.
+Weather Now was built to explore how real‑time data, clean UI design, and modular Python architecture can come together in a practical, everyday tool. The project demonstrates how to integrate external APIs, manage configuration securely. It delivers the same functionality through a graphical interface and a command‑line workflow.
+The app answers a simple question—“What’s the weather like right now?”
+The project also serves as a learning platform, showcasing how Python applications can be packaged and deployed in a way that mirrors real‑world development standards.
+
 ## Target audience
-Weather Now is designed for a broad range of users, each benefiting from a different aspect of the application:
-• 	Everyday users who want a quick, clean way to check current weather conditions without navigating ads or cluttered websites.
-• 	Developers and students looking for a reference project that demonstrates API integration, PyQt5 GUI design, CLI tooling, and modular Python structure.
-• 	Educators and reviewers assessing code quality, documentation, reproducibility, and adherence to best practices in a small but complete software project.
-• 	Command‑line enthusiasts who prefer fast, scriptable weather lookups directly from the terminal.
-• 	Learners exploring Python environments who want to understand how virtual environments, configuration files, and dependency management work in practice.
-Weather Now is intentionally simple on the surface but structured in a way that encourages exploration, extension, and adaptation.
+Weather Now is designed for a broad range of users:
+
+• 	Everyday users who want a quick simple way to check current weather conditions without navigating ads or cluttered websites.  
+• 	Developers and students looking for a reference project that demonstrates API integration, PyQt5 GUI design, CLI tooling, and modular Python structure.  
+• 	Educators and reviewers assessing code documentation, reproducibility, and adherence to best practices.  
+• 	Command‑line enthusiasts who prefer fast, scriptable weather lookups directly from the terminal.  
+• 	Learners exploring Python environments who want to understand how virtual environments, configuration files, and dependency management work in practice.  
+
 ## Features
-Dual Interface
-• 	GUI Mode powered by PyQt5 for an interactive, user‑friendly experience.
-• 	CLI Mode for quick weather lookups directly from the terminal.
-• 	Real‑Time Weather Data
-• 	Fetches current conditions (temperature, humidity, wind, etc.) from the OpenWeather API.
-• 	Config‑Driven Setup
-• 	API key and default settings stored in a  file.
-• 	Keeps sensitive data out of source control.
-• 	Isolated Virtual Environment
-• 	Uses a project‑local  to ensure clean, reproducible dependencies.
-• 	 is intentionally excluded from version control.
-• 	Modular Codebase
-• 	Clear separation between API logic, UI components, and CLI handlers.
+•  Dual Interface (GUI and CLI modes)  
+• 	Real‑Time Weather Data (Fetches the current temperature from the OpenWeather)  
+• 	Configuration‑driven setup  
+• 	API key and default settings stored in a  file  
+• 	Keeps sensitive data out of version control  
+• 	Isolated Virtual Environment  
+• 	Modular codebase  
+• 	Clear separation between API logic, UI components, and CLI handlers  
 • 	Easy to extend or integrate into other projects.
+
 ## Future Enhancements
-Weather Now is intentionally lightweight, but there are several meaningful improvements planned to expand its capabilities and refine the user experience. These enhancements aim to make the application more informative, more customizable, and more adaptable to different usage styles.
-🔧 Planned Features
-• 	5‑Day Forecast Support
-Extend the current real‑time weather lookup with multi‑day forecasts, including temperature trends, precipitation probability, and wind patterns.
-• 	Search History & Favorites
-Allow users to save frequently checked locations and quickly revisit previous searches in both GUI and CLI modes.
-• 	Improved Error Handling & Offline Mode
-Provide clearer feedback when API requests fail and offer a fallback mode that displays the last known weather data.
-• 	Unit & Language Customization
-Add support for switching between Celsius/Fahrenheit, metric/imperial units, and multiple UI languages.
-• 	Enhanced GUI Features
-Introduce icons, themes, and layout improvements to make the interface more visually engaging and accessible.
-• 	Packaging & Distribution
-Package the app as a standalone executable for Windows, making installation easier for non‑technical users.
-• 	Plugin‑Friendly Architecture
+Weather Now is basic, but there are several improvements planned to expand its capabilities and refine the user experience. These enhancements aim to make the application more informative, customizable, and adaptable to different user styles. 
+
+#### -7‑Day Forecast Support
+Extend the current real‑time weather lookup with multi‑day forecasts, to include temperature trends, precipitation probability, wind patterns, air quality, etc.
+
+#### -Search History & Favorites  
+Allow users to save frequently checked locations and quickly revisit previous searches in both GUI and CLI modes.  
+
+#### -Auto-complete for city names. 
+
+#### -Improved Error Handling & Offline Mode  
+Provide clearer feedback when API requests fail and offer a fallback mode that displays the last known weather data.  
+
+#### -Unit & Language Customization  
+Add support for switching between metric/imperial units, and multiple UI languages. 
+
+#### -Enhanced GUI Features  
+Introduce icons, themes, and layout improvements to make the interface more visually engaging and accessible.  
+
+#### -Dark/light theme toggle
+
+#### -Animated transitions
+
+#### -Packaging & Distribution  
+Package the app as a standalone executable for Windows, making installation easier for non‑technical users.  
+
+#### -Plugin‑Friendly Architecture  
 Explore a modular system where additional data sources (e.g., air quality, UV index, sunrise/sunset times) can be added as optional extensions.
-## How it works
-## External libraries used
-## Attribution
-## Screenshots
-## Testing documentation  
-Manual Testing Table — (PyQt5)/(GUI)
-| Test ID | Scenario                            | Steps                                        | Expected Result                          | Actual Result |
-|---------|-------------------------------------|----------------------------------------------|------------------------------------------|---------------|
-| T1      | Application launches                |Run   `weather_now.py`                        |GUI window opens with all widgets visible |As expected    |
-| T2      | Empty city input                    |Leave input blank<br>→Click "Get Weather"     |Error: “Please enter a city name.”        |As expected    |
-| T3      | Missing creds.json                  |Remove/rename config.json<br>→ click button   |Error: “API key missing…”                 |As expected    |
-| T4      | Invalid JSON in creds               |Break JSON syntax<br>→ run app                |Error: “API key missing…”                 |As expected    |
-| T5      | Missing API key field               |Remove `key` from creds.json                  |Error: “API key missing…”                 |As expected    |
-| T6      | Invalid API key                     |Enter fake key<br>→ search city               |Error: “Unauthorized: Invalid API key”    |As expected    |
-| T7      | Valid city                          |Enter, for example “London”<br>→ click button |Weather data displayed                    |As expected    |
-| T8      | Invalid city                        |Enter for example “asdfgh”<br>→ click button  |Error: “City not found”                   |As expected    |
-| T9      | No internet                         |Disable internet connection<br> → click button|Error: “Connection Error…”                |As expected    |
-| T10     | API timeout                         |Simulate slow network                         |Error: “Timeout Error…”                   |As expected    |
-| T11     | API server error                    |Force 500 response                            |Error: “Server error…”                    |As expected    |
-| T12     | Loading state                       |Click button                                  |Button shows “Loading…” and disables      |As expected    |
-| T13     | Button restores                     |After request completes                       |Button returns to normal                  |As expected    |
-| T14     | Emoji mapping                       |Test weather types                            |Correct emoji displayed                   |As expected    |
-| T15     | Temperature conversion              |Compare °C/°F                                 |Correct conversion shown                  |As expected    |
-| T16     | Missing stylesheet                  |Remove style.qss                              |Console warning, but app still works      |As expected    |
-| T17     | Press `Enter` on keyboard to search |Type city<br>→ press Enter                    |Same as clicking button                   |As expected    |
-| T18     | Error clears on success             |Trigger error<br>→ then valid city            |Error label clears                        |As expected    |
-| T19     | Weather clears on error             |Show weather<br>→ then trigger error          |Weather labels clear                      |As expected    |
-| T20     | Application exit                    |Close window                                  |App exits cleanly                         |As expected    |
-
-
-## Development rationale
-## Deployment instructions
 
 ## Project folder structure
 weather_now/
@@ -109,24 +104,24 @@ weather_now/
 └── README.md              # Project documentation
 ```
 
- ## WInstallation & Usage Guide
- ### Requirements
+## Installation & User Guide
+#### Requirements
 • 	Python v3.10 or later  
 • 	Internet connection (for API requests)  
 • 	OpenWeatherMap API key  
 • 	Required Python packages: `PyQt5` `requests`
 
- ### Installation
- **Clone the repository:**  
- `git clone https://github.com/<your-username>/weather_now.git`
+#### Installation
+**Clone the repository:**  
+`git clone https://github.com/<your-username>/weather_now.git`
 `cd weather_now`  
 Install the required dependencies:
-`pip install -r requirements.txt`
-This installs:  
+`pip install -r requirements.txt` This installs:  
+
 • 	PyQt5 — for the GUI.  
 • 	requests — for API communication.  
 
-**API Key Setup (Required):**  
+**API Key setup (Required):**  
 Weather Now uses the OpenWeather API.
 Before running the app, create a file named:
 `creds.json`.
@@ -139,19 +134,20 @@ Place it in the project root with the following structure:
 You can obtain a free API key from:
 https://openweathermap.org/api.  
 If the key is missing or invalid, the app will run but will display an error when fetching weather data.
-### Running the Graphical User Interface
+#### Running the Graphical User Interface
 To launch the graphical user interface, enter:  
 `python weather_now.py`  
 
-The GUI allows you to:  
+The GUI allows you to:
+
 • 	Enter a city name.  
-• 	Fetch current weather.  
+• 	Fetch current temperature data.  
 • 	View temperature in °C and °F.  
 • 	See weather conditions with emojis.  
-• 	Read a short description.   
+• 	Read a short description of weather conditions.   
 
 Weather Now also includes a command‑line interface for managing a simple weather dataset.
-### Run in command-line mode:
+#### Run in command-line mode:
 `python weather_now.py --cli`  
 
 Commands
@@ -164,21 +160,79 @@ Commands
 
 The dataset is stored in:  
 `weather_history.json`  
-This file is ignored by Git to avoid committing user‑specific data.
-### Usage Notes 
+This file is ignored by Git to avoid committing user‑sensitive data.
+
+#### Usage Notes 
 •  If the API key is missing or invalid, the app will show a clear error message.  
 • 	If the city name is empty or incorrect, the app will notify the user.  
 • 	If the internet connection is unavailable, the app will display a connection error.  
 • 	The button disables during loading to prevent duplicate requests.  
-• 	The app uses an external stylesheet () for visual styling.
-### Troubleshooting
+• 	The app uses an external stylesheet (`style.qss`) for visual styling.
+
+#### Troubleshooting
 |Issue              |Cause                        |Solution                  |
 |-------------------|-----------------------------|--------------------------|
 |"API key missing"  |creds.json missing or invalid|Recreate creds.jsson      |
-|"City not found"   |Invalid city name            | Check spelling           |
+|"City not found"   |Invalid city name            |Check spelling           |
 |"Connection Error" |No internet                  |Reconnect and retry       |
 |No styling applied |Missing `style.qss`          |Add or recreate stylesheet|
 
+## Known Issues / Limitations
+The following limitations are known or expected:
+
+1. The GUI performs network requests on the main thread, which may cause temporary freezing during slow or unstable connections.  
+PyQt’s event loop can only do one thing at a time, so while the network request is happening:
+
+-The window cannot repaint  
+-Buttons cannot be clicked  
+-The OS may mark the window as “Not Responding”  
+-Animations or loading indicators cannot run
+
+Why it matters:  
+If the API is slow or the user has poor internet connection, the app feels unresponsive.
+
+2. Input validation is minimal; unusual or malformed city names may produce unexpected API errors.
+- API rate limits (HTTP 429) are not currently handled.
+- The application does not cache results or retry failed requests.
+- The API key is stored in plain text in `creds.json`, which is not secure for production use.
+- No automated tests are included; all testing is manual.
+- The CLI and GUI do not yet share a unified API wrapper.
+- Corrupted JSON files in CLI mode may cause errors.
+- Localization and internationalization are not implemented.
+
+## Testing documentation  
+Manual Testing Table — (PyQt5/GUI)
+| Test ID | Scenario                            | Steps                                        | Expected Result                          | Actual Result |Status|
+|---------|-------------------------------------|----------------------------------------------|------------------------------------------|---------------|------|
+| T1      | Application launches                |Run `weather_now.py`                          |GUI window opens with all widgets visible |As expected    |  ✅  |
+| T2      | Empty city input                    |Leave input blank<br>→Click "Get Weather"     |Error: “Please enter a city name.”        |As expected    | ✅   |
+| T3      | Missing creds.json                  |Remove/rename creds.json<br>→ click button    |Error: “API key missing…”                 |As expected    |  ✅  |
+| T4      | Invalid JSON in creds               |Break JSON syntax<br>→ run app                |Error: “API key missing…”                 |As expected    | ✅  |
+| T5      | Missing API key field               |Remove `key` from creds.json                  |Error: “API key missing…”                 |As expected    | ✅   |
+| T6      | Invalid API key                     |Enter fake key<br>→ search city               |Error: “Unauthorized: Invalid API key”    |As expected    |  ✅  |
+| T7      | Valid city                          |Enter, for example “London”<br>→ click button |Weather data displayed                    |As expected    |  ✅  |
+| T8      | Invalid city                        |Enter for example “asdfgh”<br>→ click button  |Error: “City not found”                   |As expected    |   ✅ |
+| T9      | No internet                         |Disable internet connection<br> → click button|Error: “Connection Error…”                |As expected    | ✅   |
+| T10     | API timeout                         |Simulate slow network                         |Error: “Timeout Error…”                   |As expected    |  ✅  |
+| T11     | API server error                    |Force 500 response                            |Error: “Server error…”                    |Not Achieved   |  ❌  |
+| T12     | Loading state                       |Click button                                  |Button shows “Loading…” and disables      |As expected    |  ✅  |
+| T13     | Button restores                     |After request completes                       |Button returns to normal                  |As expected    |  ✅  |
+| T14     | Emoji mapping                       |Test weather types                            |Correct emoji displayed                   |As expected    |  ✅  |
+| T15     | Temperature conversion              |Compare °C/°F                                 |Correct conversion shown                  |As expected    |  ✅  |
+| T16     | Missing stylesheet                  |Remove style.qss                              |Console warning, but app still works      |Not Achieved   |  ❌  |
+| T17     | Press `Enter` on keyboard to search |Type city<br>→ press Enter                    |Same as clicking button                   |As expected    |  ✅ |
+| T18     | Error clears on success             |Trigger error<br>→ then valid city            |Error label clears                        |As expected    |  ✅ |
+| T19     | Weather clears on error             |Show weather<br>→ then trigger error          |Weather labels clear                      |As expected    |  ✅ |
+| T20     | Application exit                    |Close window                                  |App exits cleanly                         |As expected    | ✅  |
+
+
+## External libraries used
+## Attribution
+## Screenshots
+
+
+## Development rationale
+## Deployment instructions
 ## Application Flowchart (PyQt5 GUI)
 The following flowchart illustrates the core logic behind Weather Now, showing how the application processes user input, retrieves data from the OpenWeather API, and displays results in both GUI and CLI modes. This visual overview helps clarify the internal structure of the project and highlights how each component interacts within the overall system.
 ![Application flowchart](images/flowchart.png)
@@ -188,7 +242,12 @@ The Data Flow Diagram (DFD) provides a high‑level view of how information move
 This diagram helps clarify how the system handles requests, transforms raw API data, and delivers weather information through both the GUI and CLI interfaces.
 [Data flow diagram](docs/dataflow.pdf)
 
-## Known Issues / Limitations
+
+
+
+
+
+
 
 
 
