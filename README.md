@@ -2,7 +2,7 @@
 <div align="center">
 <h2>Table of contents</h2>
 <h6>Project Introduction</h6>
-<h6>Purpose of the Application</h6>
+<h6>Purpose of the Application / Development rationale</h6>
 <h6>Target audience</h6>
 <h6>Features</h6>
 <h6>Future enhancements</h6>
@@ -15,8 +15,7 @@
 <h6>External libraries used</h6>
 <h6>Application Flowchart</h6>
 <h6>Data Flow Diagram</h6>
-<h6>Development rationale</h6>
-<h6>Deployment instructions</h6>
+<h6>Attribution</h6>
 </div>
 
 ## Project Introduction
@@ -30,7 +29,7 @@ Weather Now is built to be easy to run, understand, and to extend. It is an exam
 • 	Simple project structure and maintainable code,  
 • 	Real‑world practices such as configuration file management and data persistence.
 
-## Purpose of the app
+## Purpose of the app / Development rationale
 Weather Now was built to explore how real‑time data, clean UI design, and modular Python architecture can come together in a practical, everyday tool. The project demonstrates how to integrate external APIs, manage configuration securely. It delivers the same functionality through a graphical interface and a command‑line.
 The app answers a simple question—“What’s the weather like right now?”
 The project also serves as a learning platform, showcasing how Python applications can be packaged and deployed in a way that mirrors real‑world development standards.
@@ -293,9 +292,24 @@ The Data Flow Diagram (DFD) provides a high‑level view of how information move
 This diagram helps clarify how the system handles requests, transforms raw API data, and delivers weather information through both the GUI and CLI interfaces.
 [Data flow diagram](docs/dataflow.pdf)
 
-## Attribution
-## Development rationale
-## Deployment instructions
+## 📝 Attribution
+
+Weather Now uses the following external services and resources:
+
+- **OpenWeather API** — Provides real-time weather data used by both the GUI and CLI modes.  
+  https://openweathermap.org/
+
+- **httpstat.us** — Used during development to simulate HTTP error responses (e.g., 500, 503, 504) for testing the app’s error-handling logic.  
+  https://httpstat.us/
+
+- **PyQt5** — GUI framework used to build the desktop interface.  
+  https://www.riverbankcomputing.com/software/pyqt/
+
+- **Requests library** — Handles HTTP communication with the weather API.  
+  https://docs.python-requests.org/
+
+All other code, logic, and design decisions were created as part of the Weather Now project.
+
 
 
 
