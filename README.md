@@ -2,7 +2,7 @@
 <div align="center">
 <h2>Table of contents</h2>
 <h6>Project Introduction</h6>
-<h6>Purpose of the Application / Development rationale</h6>
+<h6>Development rationale</h6>
 <h6>Target audience</h6>
 <h6>Features</h6>
 <h6>Future enhancements</h6>
@@ -29,7 +29,7 @@ Weather Now is built to be easy to run, understand, and to extend. It is an exam
 • 	Simple project structure and maintainable code,  
 • 	Real‑world practices such as configuration file management and data persistence.
 
-## Purpose of the app / Development rationale
+## Development rationale
 Weather Now was built to explore how real‑time data, clean UI design, and modular Python architecture can come together in a practical, everyday tool. The project demonstrates how to integrate external APIs, manage configuration securely. It delivers the same functionality through a graphical interface and a command‑line.
 The app answers a simple question—“What’s the weather like right now?”
 The project also serves as a learning platform, showcasing how Python applications can be packaged and deployed in a way that mirrors real‑world development standards.
@@ -308,7 +308,12 @@ Weather Now uses the following external services and resources:
 - **Requests library** — Handles HTTP communication with the weather API.  
   https://docs.python-requests.org/
 
-All other code, logic, and design decisions were created as part of the Weather Now project.
+- **PEP8 / Code Style Tools** — Online formatters and linters were used to ensure consistent, standards‑compliant Python code during development.  
+  Examples include:  
+  - https://pep8ci.herokuapp.com/  
+  - https://www.pythonchecker.com/  
+  - https://extendsclass.com/python-tester.html
+
 
 
 
