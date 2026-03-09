@@ -13,11 +13,10 @@
 <h6>Testing documentation</h6>
 <h6>Screenshots</h6>
 <h6>External libraries used</h6>
-<h6>Development rationale</h6>
-<h6>Deployment instructions</h6>
 <h6>Application Flowchart</h6>
 <h6>Data Flow Diagram</h6>
-
+<h6>Development rationale</h6>
+<h6>Deployment instructions</h6>
 </div>
 
 ## Project Introduction
@@ -133,6 +132,7 @@ Place it in the project root with the following structure:
 You can obtain a free API key from:
 https://openweathermap.org/api.  
 If the key is missing or invalid, the app will run but will display an error when fetching weather data.
+
 #### Running the Graphical User Interface
 To launch the graphical user interface, enter:  
 `python weather_now.py`  
@@ -146,7 +146,8 @@ The GUI allows you to:
 • 	Read a short description of weather conditions.   
 
 Weather Now also includes a command‑line interface for managing a simple weather dataset.
-#### Run in command-line mode:
+
+#### Run in command-line mode:  
 `python weather_now.py --cli`  
 
 Commands
@@ -242,13 +243,13 @@ Manual Testing Table — (PyQt5/GUI)
 ![Slow internet connection](images/slow-internet-error.png)
 ![Unacceptable characters](images/unacceptable-chars.png)
 ![Command line mode](images/command-line-mode.png)
+
 ## External libraries used
-## Attribution
+| Library  | Purpose | Installation |
+|----------|---------|--------------|
+| **PyQt5** | Used to build the GUI | `pip install PyQt5` |
+| **requests** | Handles HTTP requests to the OpenWeather API | `pip install requests` |
 
-
-
-## Development rationale
-## Deployment instructions
 ## Application Flowchart (PyQt5 GUI)
 The following flowchart illustrates the core logic behind Weather Now, showing how the application processes user input, retrieves data from the OpenWeather API, and displays results in both GUI and CLI modes. This visual overview helps clarify the internal structure of the project and highlights how each component interacts within the overall system.
 ![Application flowchart](images/flowchart.png)
@@ -257,6 +258,12 @@ The following flowchart illustrates the core logic behind Weather Now, showing h
 The Data Flow Diagram (DFD) provides a high‑level view of how information moves through Weather Now, from user input to API communication and final output. It highlights the major data sources, processing steps, and outputs that make up the core functionality of the application.
 This diagram helps clarify how the system handles requests, transforms raw API data, and delivers weather information through both the GUI and CLI interfaces.
 [Data flow diagram](docs/dataflow.pdf)
+
+## Attribution
+## Development rationale
+## Deployment instructions
+
+
 
 
 
