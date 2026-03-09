@@ -8,6 +8,7 @@ import sys  # handles system variables for Python interpreter
 import requests  # allows us to send HTTP requests
 import json  # read API key from creds.json file
 import argparse  # for command-line argument parsing
+import re  # for validating city names with regex
 
 # PyQt5 imports:
 # QApplication — main application class for PyQt5
@@ -107,6 +108,11 @@ class WeatherApp(QWidget):
         city = self.city_input.text().strip()
         if not city:
             self.display_error("Please enter a city name.")
+            return
+        
+        # Regex validation for city names (allows letters, spaces, and hyphens)
+        if not re.match(r"^[a-zA-Z\s-]+$", city):
+            self.display_error("Invalid city name.\n" "Please use only letters, spaces, and hyphens.")
             return
 
         self.get_weather_button.setText("Loading...")
