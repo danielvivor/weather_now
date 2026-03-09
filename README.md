@@ -11,9 +11,8 @@
 <h6>Troubleshooting</h6>
 <h6>Known Issues / Limitations</h6>
 <h6>Testing documentation</h6>
-<h6>External libraries used</h6>
 <h6>Screenshots</h6>
-
+<h6>External libraries used</h6>
 <h6>Development rationale</h6>
 <h6>Deployment instructions</h6>
 <h6>Application Flowchart</h6>
@@ -224,11 +223,28 @@ Manual Testing Table — (PyQt5/GUI)
 | T18     | Error clears on success             |Trigger error<br>→ then valid city            |Error label clears                        |As expected    |  ✅ |
 | T19     | Weather clears on error             |Show weather<br>→ then trigger error          |Weather labels clear                      |As expected    |  ✅ |
 | T20     | Application exit                    |Close window                                  |App exits cleanly                         |As expected    | ✅  |
+|T21      | Invalid characters in city name     |Input invalid character(s)<br><br>→ click button|Invalid city name.                      |As expected    |  ✅ |  
 
-
+## Screenshots
+![Homepage](images/homepage.png)
+![City check 1](images/city-check-1.png)
+![City check 2](images/city-check-2.png)
+![City check 3](images/city-check-3.png)
+![City check 4](images/city-check-4.png)
+![City check 5](images/city-check-5.png)
+![City check 6](images/city-check-6.png)
+![City check 7](images/city-check-7.png)
+![Empty city input](images/empty-input.png)
+![Invalid city](images/invalid-city.png)
+![API key missing](images/APIkey_incorrect.png)
+![APIkey missing](images/APIkey_missing.png)
+![No internet connection](images/no-int-connection.png)
+![Slow internet connection](images/slow-internet-error.png)
+![Unacceptable characters](images/unacceptable-chars.png)
+![Command line mode](images/command-line-mode.png)
 ## External libraries used
 ## Attribution
-## Screenshots
+
 
 
 ## Development rationale
@@ -241,6 +257,7 @@ The following flowchart illustrates the core logic behind Weather Now, showing h
 The Data Flow Diagram (DFD) provides a high‑level view of how information moves through Weather Now, from user input to API communication and final output. It highlights the major data sources, processing steps, and outputs that make up the core functionality of the application.
 This diagram helps clarify how the system handles requests, transforms raw API data, and delivers weather information through both the GUI and CLI interfaces.
 [Data flow diagram](docs/dataflow.pdf)
+
 
 
 
