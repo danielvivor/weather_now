@@ -31,7 +31,7 @@ Weather Now is built to be easy to run, understand, and to extend. It is an exam
 • 	Real‑world practices such as configuration file management and data persistence.
 
 ## Purpose of the app
-Weather Now was built to explore how real‑time data, clean UI design, and modular Python architecture can come together in a practical, everyday tool. The project demonstrates how to integrate external APIs, manage configuration securely. It delivers the same functionality through a graphical interface and a command‑line workflow.
+Weather Now was built to explore how real‑time data, clean UI design, and modular Python architecture can come together in a practical, everyday tool. The project demonstrates how to integrate external APIs, manage configuration securely. It delivers the same functionality through a graphical interface and a command‑line.
 The app answers a simple question—“What’s the weather like right now?”
 The project also serves as a learning platform, showcasing how Python applications can be packaged and deployed in a way that mirrors real‑world development standards.
 
@@ -41,25 +41,25 @@ Weather Now is designed for a broad range of users:
 • 	Everyday users who want a quick simple way to check current weather conditions without navigating ads or cluttered websites.  
 • 	Developers and students looking for a reference project that demonstrates API integration, PyQt5 GUI design, CLI tooling, and modular Python structure.  
 • 	Educators and reviewers assessing code documentation, reproducibility, and adherence to best practices.  
-• 	Command‑line enthusiasts who prefer fast, scriptable weather lookups directly from the terminal.  
+• 	Command‑line enthusiasts who prefer scriptable weather lookups directly from the terminal.  
 • 	Learners exploring Python environments who want to understand how virtual environments, configuration files, and dependency management work in practice.  
 
 ## Features
-•  Dual Interface (GUI and CLI modes)  
-• 	Real‑Time Weather Data (Fetches the current temperature from the OpenWeather)  
-• 	Configuration‑driven setup  
-• 	API key and default settings stored in a  file  
-• 	Keeps sensitive data out of version control  
-• 	Isolated Virtual Environment  
-• 	Modular codebase  
-• 	Clear separation between API logic, UI components, and CLI handlers  
-• 	Easy to extend or integrate into other projects.
+•  Dual Interface (GUI and CLI)  
+•  Real‑Time Weather Data (Fetches the current temperature from the OpenWeather)  
+•  Configuration‑driven setup  
+•  API key and default settings stored in a  file  
+•  Keeps sensitive data out of version control  
+•  Isolated Virtual Environment  
+•  Modular codebase  
+•  Clear separation between API logic, UI components, and CLI handlers  
+•  Easy to extend or integrate into other projects.
 
 ## Future Enhancements
 Weather Now is basic, but there are several improvements planned to expand its capabilities and refine the user experience. These enhancements aim to make the application more informative, customizable, and adaptable to different user styles. 
 
 #### -7‑Day Forecast Support
-Extend the current real‑time weather lookup with multi‑day forecasts, to include temperature trends, precipitation probability, wind patterns, air quality, etc.
+Extend weather lookup with multi‑day forecasts, to include temperature trends, precipitation probability, wind patterns, air quality, etc.
 
 #### -Search History & Favorites  
 Allow users to save frequently checked locations and quickly revisit previous searches in both GUI and CLI modes.  
@@ -70,7 +70,10 @@ Allow users to save frequently checked locations and quickly revisit previous se
 Provide clearer feedback when API requests fail and offer a fallback mode that displays the last known weather data.  
 
 #### -Unit & Language Customization  
-Add support for switching between metric/imperial units, and multiple UI languages. 
+Add support for switching between metric/imperial system of units, and multiple UI languages. 
+
+#### Timestamp display for weather data
+Extract the time field from the API response and convert it to local time. Display a formatted timestamp in both GUI and CLI modes. Include timestamps in saved dataset entries for clarity.
 
 #### -Enhanced GUI Features  
 Introduce icons, themes, and layout improvements to make the interface more visually engaging and accessible.  
@@ -165,10 +168,10 @@ This file is ignored by Git to avoid committing user‑sensitive data.
 
 #### Usage Notes 
 •  If the API key is missing or invalid, the app will show a clear error message.  
-• 	If the city name is empty or incorrect, the app will notify the user.  
-• 	If the internet connection is unavailable, the app will display a connection error.  
-• 	The button disables during loading to prevent duplicate requests.  
-• 	The app uses an external stylesheet (`style.qss`) for visual styling.
+•  If the city name is empty or incorrect, the app will notify the user.  
+•  If the internet connection is unavailable, the app will display a connection error.  
+•  The button disables during loading to prevent duplicate requests.  
+•  The app uses an external stylesheet (`style.qss`) for visual styling.
 
 #### Troubleshooting
 |Issue              |Cause                        |Solution                  |
@@ -192,14 +195,32 @@ PyQt’s event loop can only do one thing at a time, so while the network reques
 Why it matters:  
 If the API is slow or the user has poor internet connection, the app feels unresponsive.
 
-2. Input validation is minimal; unusual or malformed city names may produce unexpected API errors.
-- API rate limits (HTTP 429) are not currently handled.
-- The application does not cache results or retry failed requests.
-- The API key is stored in plain text in `creds.json`, which is not secure for production use.
-- No automated tests are included; all testing is manual.
-- The CLI and GUI do not yet share a unified API wrapper.
-- Corrupted JSON files in CLI mode may cause errors.
-- Localization and internationalization are not implemented.
+2. No retry logic or offline fallback
+If the network drops mid‑request, the app shows an error and stops.
+There is no:
+• 	retry button
+• 	automatic retry
+• 	cached last‑known weather
+• 	offline mode
+
+Why it matters:
+Users on unstable internet connections may get errors even though retrying would succeed.
+
+3. API key stored in plain text
+Why it matters:
+• plaintext API keys can be stolen
+• malware can read local JSON files
+
+4. Missing timestamp display for weather data
+The application currently does not display the time and date associated with the weather data returned by the API. This affects both:
+• 	Live weather requests (current weather)
+• 	Saved searches (CLI dataset entries)
+
+Why it matters:
+• 	Weather conditions change rapidly, and users may assume the data is more recent than it actually is.
+• 	Saved searches become ambiguous without knowing when they were recorded.
+• 	If the API request fails and cached data is shown in the future, the user won’t know how old it is.
+• 	Timezone differences (e.g., querying Tokyo from Germany) are not communicated.
 
 ## Testing documentation  
 Manual Testing Table — (PyQt5/GUI)
@@ -263,6 +284,7 @@ This diagram helps clarify how the system handles requests, transforms raw API d
 ## Attribution
 ## Development rationale
 ## Deployment instructions
+
 
 
 
