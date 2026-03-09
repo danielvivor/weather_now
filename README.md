@@ -184,42 +184,54 @@ This file is ignored by Git to avoid committing user‑sensitive data.
 ## Known Issues / Limitations
 The following limitations are known or expected:
 
-1. The GUI performs network requests on the main thread, which may cause temporary freezing during slow or unstable connections.  
+<div align="left">
+1. The GUI performs network requests on the main thread
+</div>
+This may cause temporary freezing during slow or unstable connections.  
 PyQt’s event loop can only do one thing at a time, so while the network request is happening:
 
--The window cannot repaint  
--Buttons cannot be clicked  
--The OS may mark the window as “Not Responding”  
--Animations or loading indicators cannot run
+• The window cannot repaint  
+• Buttons cannot be clicked  
+• The OS may mark the window as “Not Responding”  
+• Animations or loading indicators cannot run
 
-Why it matters:  
+_Why it matters_:  
 If the API is slow or the user has poor internet connection, the app feels unresponsive.
 
+<div align="left">
 2. No retry logic or offline fallback
-If the network drops mid‑request, the app shows an error and stops.
-There is no:
-• 	retry button
-• 	automatic retry
-• 	cached last‑known weather
-• 	offline mode
+</div>  
+If the network drops mid‑request, the app shows an error and stops. There is no:
 
-Why it matters:
+• Retry button  
+• Automatic retry  
+• Cached last‑known weather  
+• Offline mode  
+
+*Why it matters*:  
 Users on unstable internet connections may get errors even though retrying would succeed.
 
+<div align="left">
 3. API key stored in plain text
-Why it matters:
-• plaintext API keys can be stolen
-• malware can read local JSON files
+    
+</div>
 
-4. Missing timestamp display for weather data
+*Why it matters*:  
+• Plaintext API keys can be stolen  
+• Malware can read local JSON files
+
+<div align="left">
+4. Missing timestamp display for weather data    
 The application currently does not display the time and date associated with the weather data returned by the API. This affects both:
-• 	Live weather requests (current weather)
-• 	Saved searches (CLI dataset entries)
+</div>  
 
-Why it matters:
-• 	Weather conditions change rapidly, and users may assume the data is more recent than it actually is.
-• 	Saved searches become ambiguous without knowing when they were recorded.
-• 	If the API request fails and cached data is shown in the future, the user won’t know how old it is.
+• 	Live weather requests (current weather)  
+• 	Saved searches
+
+_Why it matters_:  
+• 	Weather conditions change rapidly, and users may assume the data is more recent than it actually is.  
+• 	Saved searches become ambiguous without knowing when they were recorded.  
+• 	If the API request fails and cached data is shown in the future, the user won’t know how old it is.  
 • 	Timezone differences (e.g., querying Tokyo from Germany) are not communicated.
 
 ## Testing documentation  
@@ -284,6 +296,7 @@ This diagram helps clarify how the system handles requests, transforms raw API d
 ## Attribution
 ## Development rationale
 ## Deployment instructions
+
 
 
 
