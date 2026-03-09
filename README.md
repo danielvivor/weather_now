@@ -160,6 +160,7 @@ Commands
 
 The dataset is stored in:  
 `weather_history.json`  
+
 This file is ignored by Git to avoid committing user‑sensitive data.
 
 #### Usage Notes 
@@ -262,6 +263,7 @@ This diagram helps clarify how the system handles requests, transforms raw API d
 ## Attribution
 ## Development rationale
 ## Deployment instructions
+
 
 
 
