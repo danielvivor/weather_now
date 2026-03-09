@@ -4,7 +4,8 @@ Includes optional CLI mode via --cli flag.
 """
 
 # Import required modules
-import sys  # handles system variables for Python interpreter
+import sys
+from unittest import case  # handles system variables for Python interpreter
 import requests  # allows us to send HTTP requests
 import json  # read API key from creds.json file
 import argparse  # for command-line argument parsing
@@ -146,6 +147,8 @@ class WeatherApp(QWidget):
                     self.display_error("Forbidden:\nAccess denied")
                 case 404:
                     self.display_error("Not Found:\nCity not found")
+                case 429:
+                    self.display_error("Rate limit exceeded:\nPlease wait and try again")
                 case 500:
                     self.display_error("Server error:\nTry again later")
                 case 502:
