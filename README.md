@@ -2,7 +2,7 @@
 <div align="center">
 <h2>Table of contents</h2>
 <h6>Project Introduction</h6>
-<h6>Purpose of the Application</h6>
+<h6>Development rationale</h6>
 <h6>Target audience</h6>
 <h6>Features</h6>
 <h6>Future enhancements</h6>
@@ -12,28 +12,30 @@
 <h6>Known Issues / Limitations</h6>
 <h6>Testing documentation</h6>
 <h6>Screenshots</h6>
-<h6>External libraries used</h6>
+<h6>Libraries used</h6>
 <h6>Application Flowchart</h6>
 <h6>Data Flow Diagram</h6>
-<h6>Development rationale</h6>
-<h6>Deployment instructions</h6>
+
 </div>
 
+[Attribution](#-attribution)
+
 ## Project Introduction
-Weather Now is a lightweight Python application that lets a user quickly check real‑time weather conditions through either a graphical interface or a command‑line tool. The project demonstrates practical API integration, modular code structure, and a polished user experience.
+Weather Now is a lightweight Python application that let users quickly check real‑time weather conditions through either a graphical interface or a command‑line tool. The project demonstrates practical API integration, modular code structure, and a polished user experience.
 The graphical user interface (GUI), built with PyQt5, provides an intuitive interface for entering a city and instantly viewing temperature and descriptive weather details. For users who prefer terminal workflows, the command-line (CLI) mode offers a simple dataset manager that can fetch, store, list, and delete weather entries.
 Weather Now is built to be easy to run, understand, and to extend. It is an example of:  
 
-• 	API use,   
-• 	GUI development with PyQt5,  
-• 	CLI design with argument parsing,  
-• 	Simple project structure and maintainable code,  
-• 	Real‑world practices such as configuration file management and data persistence.
+## Development rationale
+Weather Now is built to explore how real‑time data, clean UI design, and modular Python architecture can come together in a practical, everyday tool. The project demonstrates how to integrate external APIs, manage configuration securely, and deliver the same functionality through both a graphical interface and a command‑line mode. The application answers a simple question — “What’s the weather like right now?” — while serving as a hands‑on learning tool for Python application development.
+The development approach focused on clarity, maintainability, and real‑world practices. Key goals included:  
 
-## Purpose of the app
-Weather Now was built to explore how real‑time data, clean UI design, and modular Python architecture can come together in a practical, everyday tool. The project demonstrates how to integrate external APIs, manage configuration securely. It delivers the same functionality through a graphical interface and a command‑line workflow.
-The app answers a simple question—“What’s the weather like right now?”
-The project also serves as a learning platform, showcasing how Python applications can be packaged and deployed in a way that mirrors real‑world development standards.
+• 	Demonstrating API consumption using Python and the Requests library.  
+• 	Building a responsive GUI with PyQt5, separating UI concerns from application logic.  
+• 	Providing a CLI mode to support dataset management.  
+•	CLI design with argument parsing.  
+• 	Implementing robust error handling, including simulated server failures and network issues.  
+• 	Maintaining clean and readable code through modular structure.  
+• 	Designing for future extensibility, such as threading, caching, localization, and shared API modules.  
 
 ## Target audience
 Weather Now is designed for a broad range of users:
@@ -41,25 +43,26 @@ Weather Now is designed for a broad range of users:
 • 	Everyday users who want a quick simple way to check current weather conditions without navigating ads or cluttered websites.  
 • 	Developers and students looking for a reference project that demonstrates API integration, PyQt5 GUI design, CLI tooling, and modular Python structure.  
 • 	Educators and reviewers assessing code documentation, reproducibility, and adherence to best practices.  
-• 	Command‑line enthusiasts who prefer fast, scriptable weather lookups directly from the terminal.  
+• 	Command‑line enthusiasts who prefer scriptable weather lookups directly from the terminal.  
 • 	Learners exploring Python environments who want to understand how virtual environments, configuration files, and dependency management work in practice.  
 
 ## Features
-•  Dual Interface (GUI and CLI modes)  
-• 	Real‑Time Weather Data (Fetches the current temperature from the OpenWeather)  
-• 	Configuration‑driven setup  
-• 	API key and default settings stored in a  file  
-• 	Keeps sensitive data out of version control  
-• 	Isolated Virtual Environment  
-• 	Modular codebase  
-• 	Clear separation between API logic, UI components, and CLI handlers  
-• 	Easy to extend or integrate into other projects.
+•  Dual Interface (GUI and CLI).  
+•  Real‑Time Weather Data (Fetches the current temperature from the OpenWeather).  
+•  Configuration‑driven setup.  
+•  API key and default settings stored in a  file.  
+•  Keeps sensitive data out of version control.  
+•  Isolated Virtual Environment.   
+•  Clear separation between API logic, UI components, and CLI handlers.
 
 ## Future Enhancements
-Weather Now is basic, but there are several improvements planned to expand its capabilities and refine the user experience. These enhancements aim to make the application more informative, customizable, and adaptable to different user styles. 
+Weather Now in its current form is basic, but there are several improvements planned to expand its capabilities and refine the user experience. These enhancements aim to make the application more informative, customizable, and adaptable to different user styles. 
 
 #### -7‑Day Forecast Support
-Extend the current real‑time weather lookup with multi‑day forecasts, to include temperature trends, precipitation probability, wind patterns, air quality, etc.
+Extend weather lookup with multi‑day forecasts. 
+
+#### Include other weather parameters
+Include temperature trends, precipitation probability, wind patterns, air quality, etc.
 
 #### -Search History & Favorites  
 Allow users to save frequently checked locations and quickly revisit previous searches in both GUI and CLI modes.  
@@ -70,7 +73,11 @@ Allow users to save frequently checked locations and quickly revisit previous se
 Provide clearer feedback when API requests fail and offer a fallback mode that displays the last known weather data.  
 
 #### -Unit & Language Customization  
-Add support for switching between metric/imperial units, and multiple UI languages. 
+Add support for switching between metric/imperial system of units.  
+Add multiple UI languages. 
+
+#### -Timestamp display for weather data
+Extract the time field from the API response and convert it to local time. Display a formatted timestamp in both GUI and CLI modes. Include timestamps in saved dataset entries for clarity.
 
 #### -Enhanced GUI Features  
 Introduce icons, themes, and layout improvements to make the interface more visually engaging and accessible.  
@@ -165,10 +172,10 @@ This file is ignored by Git to avoid committing user‑sensitive data.
 
 #### Usage Notes 
 •  If the API key is missing or invalid, the app will show a clear error message.  
-• 	If the city name is empty or incorrect, the app will notify the user.  
-• 	If the internet connection is unavailable, the app will display a connection error.  
-• 	The button disables during loading to prevent duplicate requests.  
-• 	The app uses an external stylesheet (`style.qss`) for visual styling.
+•  If the city name is empty or incorrect, the app will notify the user.  
+•  If the internet connection is unavailable, the app will display a connection error.  
+•  The button disables during loading to prevent duplicate requests.  
+•  The app uses an external stylesheet (`style.qss`) for visual styling.
 
 #### Troubleshooting
 |Issue              |Cause                        |Solution                  |
@@ -181,25 +188,53 @@ This file is ignored by Git to avoid committing user‑sensitive data.
 ## Known Issues / Limitations
 The following limitations are known or expected:
 
-1. The GUI performs network requests on the main thread, which may cause temporary freezing during slow or unstable connections.  
-PyQt’s event loop can only do one thing at a time, so while the network request is happening:
+<div align="left">
+1. The GUI performs network requests on the main thread.
+</div>
+This may cause temporary freezing during slow or unstable connections.  
+PyQt’s event loop can only do one thing at a time, so while the network request is happening:  
 
--The window cannot repaint  
--Buttons cannot be clicked  
--The OS may mark the window as “Not Responding”  
--Animations or loading indicators cannot run
+• The window cannot repaint.    
+• Buttons cannot be clicked.    
+• The OS may mark the window as “Not Responding”.  
+• Loading indicators cannot run.
 
-Why it matters:  
+_Why it matters_:  
 If the API is slow or the user has poor internet connection, the app feels unresponsive.
 
-2. Input validation is minimal; unusual or malformed city names may produce unexpected API errors.
-- API rate limits (HTTP 429) are not currently handled.
-- The application does not cache results or retry failed requests.
-- The API key is stored in plain text in `creds.json`, which is not secure for production use.
-- No automated tests are included; all testing is manual.
-- The CLI and GUI do not yet share a unified API wrapper.
-- Corrupted JSON files in CLI mode may cause errors.
-- Localization and internationalization are not implemented.
+<div align="left">
+2. No retry logic or offline fallback
+</div>  
+If the network drops mid‑request, the app shows an error and stops. There is no:
+
+• Retry button.  
+• Automatic retry.  
+• Cached last‑known weather.  
+• Offline mode.  
+
+*Why it matters*:  
+Users on unstable internet connections may get errors even though retrying would succeed.
+<div align="left">  
+3. API key stored in plain text.    
+</div>
+  
+*Why it matters*:  
+• Plaintext API keys can be stolen.   
+• Malware can read local JSON files.
+
+<div align="left">
+4. Missing timestamp display for weather data.    
+The application currently does not display the time and date associated with the weather data returned by the API. This affects both:
+</div>  
+
+• 	Live weather requests (current weather).  
+• 	Saved searches.
+
+_Why it matters_:  
+• 	Weather conditions change rapidly, and users may assume the data is more recent than it actually is.  
+• 	Saved searches become ambiguous without knowing when they were recorded.  
+• 	If the API request fails and cached data is shown in the future, the user won’t know how old it is.  
+• 	Timezone differences (e.g., querying Tokyo from Germany) are not communicated.
 
 ## Testing documentation  
 Manual Testing Table — (PyQt5/GUI)
@@ -227,6 +262,8 @@ Manual Testing Table — (PyQt5/GUI)
 | T20     | Application exit                    |Close window                                  |App exits cleanly                         |As expected    | ✅  |
 |T21      | Invalid characters in city name     |Input invalid character(s)<br><br>→ click button|Invalid city name.                      |As expected    |  ✅ |  
 
+### Code validation
+
 ## Screenshots
 ![Homepage](images/homepage.png)
 ![City check 1](images/city-check-1.png)
@@ -245,11 +282,24 @@ Manual Testing Table — (PyQt5/GUI)
 ![Unacceptable characters](images/unacceptable-chars.png)
 ![Command line mode](images/command-line-mode.png)
 
-## External libraries used
+## Libraries used
+Weather Now makes use of a small set of external libraries alongside several Python standard‑libraries. The tables below outline each dependency and its role within the project.
+
+### External
 | Library  | Purpose | Installation |
 |----------|---------|--------------|
 | **PyQt5** | Used to build the GUI | `pip install PyQt5` |
 | **requests** | Handles HTTP requests to the OpenWeather API | `pip install requests` |
+
+### 🐍 Python standard-libararies
+
+| Module      | Purpose |
+|-------------|---------|
+| **sys**     | Accesses system-level variables and enables clean program exits |
+| **json**    | Reads the API key and other configuration data from `creds.json` |
+| **argparse** | Handles command-line argument parsing for CLI mode |
+| **re**      | Validates city names using regular expressions |
+| **time**    | Provides artificial delay simulation for testing and UX timing |
 
 ## Application Flowchart (PyQt5 GUI)
 The following flowchart illustrates the core logic behind Weather Now, showing how the application processes user input, retrieves data from the OpenWeather API, and displays results in both GUI and CLI modes. This visual overview helps clarify the internal structure of the project and highlights how each component interacts within the overall system.
@@ -260,9 +310,33 @@ The Data Flow Diagram (DFD) provides a high‑level view of how information move
 This diagram helps clarify how the system handles requests, transforms raw API data, and delivers weather information through both the GUI and CLI interfaces.
 [Data flow diagram](docs/dataflow.pdf)
 
-## Attribution
-## Development rationale
-## Deployment instructions
+## 📝 Attribution
+
+Weather Now uses the following external services and resources:
+
+- **OpenWeather API** — Provides real-time weather data used by both the GUI and CLI modes.  
+  https://openweathermap.org/
+
+- **httpstat.us** — Used during development to simulate HTTP error responses (e.g., 500, 503, 504) for testing the app’s error-handling logic.  
+  https://httpstat.us/
+
+- **PyQt5** — GUI framework used to build the desktop interface.  
+  https://www.riverbankcomputing.com/software/pyqt/
+
+- **Requests library** — Handles HTTP communication with the weather API.  
+  https://docs.python-requests.org/
+
+- **PEP8 / Code Style Tools** — Online formatters and linters were used to ensure consistent, standards‑compliant Python code during development.  
+  Examples include:  
+  - https://pep8ci.herokuapp.com/  
+  - https://www.pythonchecker.com/  
+  - https://extendsclass.com/python-tester.html
+
+
+
+
+
+
 
 
 
