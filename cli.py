@@ -2,6 +2,7 @@ import json
 import os
 from weather_api import get_weather
 
+# Dataset management for CLI mode
 DATASET = "weather_history.json"
 
 
@@ -26,6 +27,8 @@ def add_entry(city):
         print("Error: Could not fetch weather (API key missing or invalid)")
         return
 
+    # Extract only the fields we want to store
+
     entry = {
         "city": city,
         "temp_c": weather["main"]["temp"],
@@ -46,6 +49,8 @@ def list_entries():
         print("Dataset is empty")
         return
 
+    # Enumerate entries with numbering for readability
+
     for i, entry in enumerate(data, start=1):
         print(
             f"{i}. {entry['city']} — " f"{entry['temp_c']}°C — {entry['description']}"
@@ -55,6 +60,8 @@ def list_entries():
 def delete_entry(index):
     """Delete an entry by index."""
     data = load_dataset()
+
+    # Validate index before attempting deletion
 
     if index < 1 or index > len(data):
         print("Invalid index")
