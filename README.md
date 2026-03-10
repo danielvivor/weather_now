@@ -15,8 +15,10 @@
 <h6>Libraries used</h6>
 <h6>Application Flowchart</h6>
 <h6>Data Flow Diagram</h6>
-<h6>Attribution</h6>
+
 </div>
+
+[Attribution](#-attribution)
 
 ## Project Introduction
 Weather Now is a lightweight Python application that let users quickly check real‑time weather conditions through either a graphical interface or a command‑line tool. The project demonstrates practical API integration, modular code structure, and a polished user experience.
@@ -329,6 +331,7 @@ Weather Now uses the following external services and resources:
   - https://pep8ci.herokuapp.com/  
   - https://www.pythonchecker.com/  
   - https://extendsclass.com/python-tester.html
+
 
 
 
