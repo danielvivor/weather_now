@@ -109,10 +109,11 @@ class WeatherApp(QWidget):
         if not city:
             self.display_error("Please enter a city name.")
             return
-        
+
         # Regex validation for city names (allows letters, spaces, and hyphens)
         if not re.match(r"^[a-zA-Z\s-]+$", city):
-            self.display_error("Invalid city name.\n" "Please use only letters, spaces, and hyphens.")
+            self.display_error(
+                "Invalid city name.\n" "Please use only letters, spaces, and hyphens.")
             return
 
         self.get_weather_button.setText("Loading...")
@@ -147,7 +148,8 @@ class WeatherApp(QWidget):
                 case 404:
                     self.display_error("Not Found:\nCity not found")
                 case 429:
-                    self.display_error("Rate limit exceeded:\nPlease wait and try again")
+                    self.display_error(
+                        "Rate limit exceeded:\nPlease wait and try again")
                 case 500:
                     self.display_error("Server error:\nTry again later")
                 case 502:
@@ -155,12 +157,14 @@ class WeatherApp(QWidget):
                 case 503:
                     self.display_error("Service unavailable:\nServer down")
                 case 504:
-                    self.display_error("Gateway timeout:\nServer not responding")
+                    self.display_error(
+                        "Gateway timeout:\nServer not responding")
                 case _:
                     self.display_error(f"HTTP error occurred:\n{http_error}")
 
         except requests.exceptions.ConnectionError:
-            self.display_error("Connection Error:\n" "Check your internet connection")
+            self.display_error(
+                "Connection Error:\n" "Check your internet connection")
 
         except requests.exceptions.Timeout:
             self.display_error("Timeout Error:\n" "The request timed out")
@@ -219,7 +223,8 @@ class WeatherApp(QWidget):
 
 # Start the application
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Weather App with GUI and CLI modes")
+    parser = argparse.ArgumentParser(
+        description="Weather App with GUI and CLI modes")
     parser.add_argument(
         "--cli",
         action="store_true",
