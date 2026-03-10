@@ -33,6 +33,8 @@ The development approach focused on clarity, maintainability, and real‑world p
 • 	Maintaining clean and readable code through modular structure.  
 • 	Designing for future extensibility, such as threading, caching, localization, and shared API modules.  
 
+###### _[Jump to Table of Contents](#table-of-contents)_
+
 ## Target audience
 Weather Now is designed for a broad range of users:
 
@@ -87,6 +89,8 @@ Package the app as a standalone executable for Windows, making installation easi
 
 #### -Plugin‑Friendly Architecture  
 Explore a modular system where additional data sources (e.g., air quality, UV index, sunrise/sunset times) can be added as optional extensions.
+
+###### _[Jump to Table of Contents](#table-of-contents)_
 
 ## Project folder structure
 weather_now/
@@ -166,6 +170,8 @@ The dataset is stored in:
 
 This file is ignored by Git to avoid committing user‑sensitive data.
 
+###### _[Jump to Table of Contents](#table-of-contents)_
+
 #### Usage Notes 
 •  If the API key is missing or invalid, the app will show a clear error message.  
 •  If the city name is empty or incorrect, the app will notify the user.  
@@ -232,6 +238,8 @@ _Why it matters_:
 • 	If the API request fails and cached data is shown in the future, the user won’t know how old it is.  
 • 	Timezone differences (e.g., querying Tokyo from Germany) are not communicated.
 
+###### _[Jump to Table of Contents](#table-of-contents)_
+
 ## Testing documentation  
 Manual Testing Table — (PyQt5/GUI)
 | Test ID | Scenario                            | Steps                                        | Expected Result                          | Actual Result |Status|
@@ -262,6 +270,8 @@ Manual Testing Table — (PyQt5/GUI)
 
 Weather Now follows the PEP 8 style guidelines.
 
+###### _[Jump to Table of Contents](#table-of-contents)_
+
 ## Screenshots
 ![Homepage](images/homepage.png)
 ![City check 1](images/city-check-1.png)
@@ -279,6 +289,8 @@ Weather Now follows the PEP 8 style guidelines.
 ![Slow internet connection](images/slow-internet-error.png)
 ![Unacceptable characters](images/unacceptable-chars.png)
 ![Command line mode](images/command-line-mode.png)
+
+###### _[Jump to Table of Contents](#table-of-contents)_
 
 ## Libraries used
 Weather Now makes use of a small set of external libraries alongside several Python standard‑libraries. The tables below outline each dependency and its role within the project.
@@ -325,8 +337,12 @@ Weather Now uses the following external services and resources:
   https://docs.python-requests.org/
 
 - **PEP8 / Code Style Tools** — Linter used to ensure standards‑compliant Python code.  
-  AutoPEP8  
+  AutoPEP8
+
+
+###### _[Jump to Table of Contents](#table-of-contents)_
  
+
 
 
 
