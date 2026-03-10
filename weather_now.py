@@ -4,8 +4,7 @@ Includes optional CLI mode via --cli flag.
 """
 
 # Import required modules
-import sys
-from unittest import case  # handles system variables for Python interpreter
+import sys  # handles system variables for Python interpreter
 import requests  # allows us to send HTTP requests
 import json  # read API key from creds.json file
 import argparse  # for command-line argument parsing
