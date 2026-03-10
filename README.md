@@ -1,23 +1,19 @@
 ﻿# Weather Now
-<div align="center">
-<h2>Table of contents</h2>
-<h6>Project Introduction</h6>
-<h6>Development rationale</h6>
-<h6>Target audience</h6>
-<h6>Features</h6>
-<h6>Future enhancements</h6>
-<h6>Project folder structure</h6>
-<h6>Installation & User Guide</h6>
-<h6>Troubleshooting</h6>
-<h6>Known Issues / Limitations</h6>
-<h6>Testing documentation</h6>
-<h6>Screenshots</h6>
-<h6>Libraries used</h6>
-<h6>Application Flowchart</h6>
-<h6>Data Flow Diagram</h6>
-
-</div>
-
+### Table of contents
+[Project Introduction](#project-introduction)  
+[Development rationale](#development-rationale)  
+[Target audience](#target-audience)  
+[Features](#features)  
+[Future enhancements](#future-enhancements)  
+[Project folder structure](project-folder-structure)  
+[Installation & User Guide](#installation--user-guide)  
+[Troubleshooting](#troubleshooting)  
+[Known Issues / Limitations](#known-issues--limitations)  
+[Testing documentation](#testing-documentation)  
+[Screenshots](#screenshots)  
+[Libraries used](#libraries-used)  
+[Application Flowchart](#libraries-used)  
+[Data Flow Diagram](#data-flow-diagram)  
 [Attribution](#-attribution)
 
 ## Project Introduction
@@ -262,7 +258,9 @@ Manual Testing Table — (PyQt5/GUI)
 | T20     | Application exit                    |Close window                                  |App exits cleanly                         |As expected    | ✅  |
 |T21      | Invalid characters in city name     |Input invalid character(s)<br><br>→ click button|Invalid city name.                      |As expected    |  ✅ |  
 
-### Code validation
+### 🧹 Code validation
+
+Weather Now follows the PEP 8 style guidelines.
 
 ## Screenshots
 ![Homepage](images/homepage.png)
@@ -326,11 +324,10 @@ Weather Now uses the following external services and resources:
 - **Requests library** — Handles HTTP communication with the weather API.  
   https://docs.python-requests.org/
 
-- **PEP8 / Code Style Tools** — Online formatters and linters were used to ensure consistent, standards‑compliant Python code during development.  
-  Examples include:  
-  - https://pep8ci.herokuapp.com/  
-  - https://www.pythonchecker.com/  
-  - https://extendsclass.com/python-tester.html
+- **PEP8 / Code Style Tools** — Linter used to ensure standards‑compliant Python code.  
+  AutoPEP8  
+ 
+
 
 
 
