@@ -15,11 +15,6 @@ def resource_path(relative_path):
 # Load the API key from creds.json; return None if the file is missing or invalid.
 def load_api_key():
 
-    # Railway / cloud deployment: use environment variable
-    env_key = os.getenv("WEATHER_API_KEY")
-    if env_key:
-        return env_key
-
     """Load API key from creds.json."""
     try:
         config_path = resource_path("creds.json")
@@ -30,8 +25,6 @@ def load_api_key():
         return None
 
 # Fetch weather data for a city using OpenWeatherMap; return JSON or None on failure.
-
-
 def get_weather(city):
     """Fetch weather data for a given city."""
     api_key = load_api_key()
