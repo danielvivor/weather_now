@@ -170,6 +170,13 @@ The dataset is stored in:
 
 This file is ignored by Git to avoid committing user‑sensitive data.
 
+#### Run in command-line mode (Github Codespaces)
+Codespaces starts with a clean environment, so you must create `creds.json` inside the Codespace.  
+Create the file:  
+`touch creds.json`  
+
+Then open it and paste your API key using the structure described above.
+
 ###### _[Jump to Table of Contents](#table-of-contents)_
 
 #### Usage Notes 
@@ -342,6 +349,7 @@ Weather Now uses the following external services and resources:
 
 ###### _[Jump to Table of Contents](#table-of-contents)_
  
+
 
 
 
