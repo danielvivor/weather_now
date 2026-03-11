@@ -2,7 +2,6 @@ import json
 import requests
 import os
 import sys
-import flask
 
 # Weather API utility functions
 def resource_path(relative_path):
