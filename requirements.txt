@@ -1,6 +1,7 @@
+flask
+gunicorn
 requests
 python-dotenv
 
-# GUI-only dependency (not installed in Codespaces)
-# Install locally if running GUI mode:
+# GUI-only dependency (not installed on Heroku)
 # PyQt5
