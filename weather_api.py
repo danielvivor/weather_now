@@ -4,6 +4,8 @@ import os
 import sys
 
 # Weather API utility functions
+
+
 def resource_path(relative_path):
     """Return absolute path to a resource, using PyInstaller’s temp folder when bundled."""
     if hasattr(sys, "_MEIPASS"):
@@ -13,7 +15,6 @@ def resource_path(relative_path):
 
 # Load the API key from creds.json; return None if the file is missing or invalid.
 def load_api_key():
-
     """Load API key from creds.json."""
     try:
         config_path = resource_path("creds.json")
@@ -24,6 +25,8 @@ def load_api_key():
         return None
 
 # Fetch weather data for a city using OpenWeatherMap; return JSON or None on failure.
+
+
 def get_weather(city):
     """Fetch weather data for a given city."""
     api_key = load_api_key()

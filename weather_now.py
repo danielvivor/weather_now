@@ -129,7 +129,6 @@ if __name__ == "__main__":
     if args.cli:
         run_cli()
 
-   
     # GUI MODE
     else:
         # PyQt5 imports:
