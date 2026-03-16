@@ -1,2 +1,2 @@
 web: python web.py
-worker: python cli.py
+worker: python weather_now.py
