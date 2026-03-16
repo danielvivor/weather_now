@@ -1,7 +1,1 @@
-flask
-gunicorn
 requests
-python-dotenv
-
-# GUI-only dependency (not installed on Heroku)
-# PyQt5
