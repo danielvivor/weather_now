@@ -3,3 +3,4 @@ creds.json
 __pycache__/
 *.pyc
 weather_history.json
+run.py
