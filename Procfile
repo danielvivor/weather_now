@@ -1,1 +1,1 @@
-worker: python cli.py
+worker: python cli.py --add
