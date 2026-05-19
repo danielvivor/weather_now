@@ -1,7 +1,1 @@
-<<<<<<< HEAD
 requests
-=======
-flask
-requests
-gunicorn
->>>>>>> a273c6d7180482ae6a18a225dff4ef635e167ab2
