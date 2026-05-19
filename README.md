@@ -140,6 +140,16 @@ You can obtain a free API key from:
 https://openweathermap.org/api.  
 If the key is missing or invalid, the app will run but will display an error when fetching weather data.
 
+#### Running the LIVE WEB API
+The application is currently deployed on Render. You can fetch live weather data via simple URL parameters.
+• Base URL: `https://weather-now-uusw.onrender.com/`
+
+• Endpoint: `/weather`
+
+• Usage: Add ?city=CITY_NAME to the end of the URL.
+
+• Example: `https://weather-now-uusw.onrender.com/weather?city=London`
+
 #### Running the Graphical User Interface
 To launch the graphical user interface, enter:  
 `python weather_now.py`  
