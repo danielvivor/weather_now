@@ -1,2 +1,1 @@
-web: python web.py
-worker: python cli.py --add
+web: node index.js
