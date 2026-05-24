@@ -55,21 +55,28 @@ def delete_entry(index):
     print(f"Deleted entry for {removed['city']}")
 
 def main():
-    parser = argparse.ArgumentParser(description="Weather CLI")
-    parser.add_argument("--add", type=str, help="Add weather entry for a city")
-    parser.add_argument("--list", action="store_true", help="List all entries")
-    parser.add_argument("--delete", type=int, help="Delete entry by index")
-
-    args = parser.parse_args()
-
-    if args.add:
-        add_entry(args.add)
-    elif args.list:
-        list_entries()
-    elif args.delete:
-        delete_entry(args.delete)
-    else:
-        parser.print_help()
+    while True:
+        print("\n--- Weather CLI ---")
+        print("1. Add weather entry")
+        print("2. List entries")
+        print("3. Delete entry")
+        print("4. Exit")
+        
+        choice = input("Enter your choice (1-4): \n")
+        
+        if choice == '1':
+            city = input("Enter city name: \n")
+            add_entry(city)
+        elif choice == '2':
+            list_entries()
+        elif choice == '3':
+            index = int(input("Enter index to delete: \n"))
+            delete_entry(index)
+        elif choice == '4':
+            print("Goodbye!")
+            break
+        else:
+            print("Invalid choice, please try again.")
 
 if __name__ == "__main__":
     main()
