@@ -16,7 +16,7 @@ io.on('connection', (socket) => {
     
     function run_python_script() {
         try {
-            let pyshell = new PythonShell('weather_api.py');
+            let pyshell = new PythonShell('run.py');
 
             socket.on('disconnect', () =>  {
                 console.log("Socket Disconnected");
