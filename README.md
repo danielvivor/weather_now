@@ -142,7 +142,8 @@ If the key is missing or invalid, the app will run but will display an error whe
 
 #### Running the LIVE WEB API
 The application is currently deployed on Heroku. You can fetch live weather data via simple URL parameters.
-• Base URL: `https://weathernow-ac29dfbc4780.herokuapp.com/`
+• Base URL: `https://weathernow-ac29dfbc4780.herokuapp.com/` The interface at this URL displays similar to the image below.
+!()
 
 #### Running the Graphical User Interface
 To launch the graphical user interface, enter:  
